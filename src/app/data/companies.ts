@@ -16,7 +16,7 @@ export const companies = [
     "numEmployees": 103000,
     "totalRevenue": 66400000000,
     "totalPlastic": 3365,
-    "plasticRecycledRate": 60,
+    "plasticRecycledRate": 0.6,
     "plasticLeakageRate": 0.1
   },
   {
