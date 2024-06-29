@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 background-gradient-blue">
       <div className="z-10 w-full flex flex-col items-center justify-center">
-        <img src="/Logo gross.svg" alt="Vercel Logo" className="w-2/3 mb-10" />
+        <img src="/Logo gross.svg" alt="PlastiCredit" className="w-2/3 mb-10" />
         <Link href="/compensator" className="button">
           Take Action
         </Link>
