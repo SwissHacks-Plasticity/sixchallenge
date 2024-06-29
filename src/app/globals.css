@@ -12,7 +12,7 @@
 }
 .background-gradient-blue::before {
   content: '';
-  background-image: url('/transparent_plastic_texture_isolated_on_background.webp');
+  background-image: url('/transparent_plastic_texture_isolated_on_background.png');
   background-size: cover;
   background-position: 130%;
   position: absolute;
