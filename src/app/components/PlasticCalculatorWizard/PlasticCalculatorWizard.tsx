@@ -66,6 +66,7 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
         <button
           className="button blue back mb-10"
           onClick={onBack}
+          hidden={currentStepIndex === 0}
           disabled={currentStepIndex === 0}
         >
           Back
