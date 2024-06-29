@@ -12,15 +12,6 @@ export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const [percentage, setPercentage] = useState(0);
   const [amountProjects, setAmountProjects] = useState(3);
-  const project = {
-    name: 'Project 1',
-    location: 'Switzerland',
-    employees: 1000,
-    revenue: 10000000,
-    credits: 22,
-    plasticTotal: 25,
-    desc: 'Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt.',
-  };
 
   const formatNumber = useCallback((number = 0) => {
     // Use the toLocaleString method to add suffixes to the number
