@@ -22,6 +22,24 @@
   bottom: 0;
   opacity: 0.7;
 }
+.background-bottle {
+  background-image: url('/Bottle 01.svg');
+  background-position: bottom right;
+  background-size: 55%;
+  background-repeat: no-repeat;
+}
+.background-turtle {
+  background-image: url('/Turtle Outline.svg');
+  background-position: 100% 150%;
+  background-size: 55%;
+  background-repeat: no-repeat;
+}
+.background-logo {
+  background-image: url('/Logo button_test-01.svg');
+  background-position: top left;
+  background-size: 20%;
+  background-repeat: no-repeat;
+}
 
 .button {
   @apply border border-white text-xl text-white font-bold;

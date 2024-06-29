@@ -36,7 +36,7 @@
     </clipPath>
   </defs>
   <g id="Logo_button" data-name="Logo button" clip-path="url(#clip-Logo_button)">
-    <rect width="314" height="310" fill="#fff"/>
+    <rect width="314" height="310" fill="transparent"/>
     <g id="Logo_button-2" data-name="Logo_button" transform="translate(69 62)">
       <g transform="matrix(1, 0, 0, 1, -69, -62)" filter="url(#Ellipse_46)">
         <circle id="Ellipse_46-2" data-name="Ellipse 46" cx="89" cy="89" r="89" transform="translate(69 62)" fill="url(#radial-gradient)"/>
