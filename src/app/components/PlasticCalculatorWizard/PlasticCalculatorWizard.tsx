@@ -35,7 +35,7 @@ export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ 
 };
 
 export const PlasticCalculatorWizardHandler: React.FC = () => {
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [currentStepIndex, setCurrentStepIndex] = useState(1);
 
   const onContinue = useCallback(
     () => setCurrentStepIndex(Math.min(WizardSteps.length - 1, currentStepIndex + 1)),
@@ -66,7 +66,7 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
     <div
       className={`flex w-full flex-col justify-center relative items-center ${getBackgroundClass()}`}
     >
-      <div>
+      <div className='w-full px-10'>
         <CurrentStep />
       </div>
       <button onClick={onBack} disabled={currentStepIndex === 0}>
