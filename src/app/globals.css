@@ -23,7 +23,7 @@
   opacity: 0.7;
 }
 
-button {
+.button {
   @apply border border-white text-xl text-white font-bold;
   border-width: 5px;
   border-radius: 5px;
