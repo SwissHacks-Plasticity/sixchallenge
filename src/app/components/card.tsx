@@ -10,7 +10,7 @@ export const Card = ({
   return (
     <section className="w-full relative py-8">
       <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us overflow-scroll">
-        <h4 className={"font-bold"}>CHF {project.pricePerCredit}.- per Credit</h4>
+        <h4 className={'font-bold'}>CHF {project.pricePerCredit}.- per Credit</h4>
         <h3>{project.title}</h3>
         <div className="mb-3">{project.description}</div>
         <div className="flex">
@@ -24,7 +24,13 @@ export const Card = ({
           </div>
           <div>
             <span className="text-sm">Source</span>
-            <img src="/pcx-logo.webp" className="w-[84px] h-[28px] " alt="source" />
+            {project.source === 'PCX' ? (
+              <img src="/pcx-logo.webp" className="w-[84px] h-[28px] " alt="source" />
+            ) : project.source === 'rePurpose' ? (
+              <img src="/logo_repurpose.png" className="w-[84px] h-[24px] " alt="source" />
+            ) : (
+              <img src="/logo_impacthub.png" className="w-[28px] h-[28px] " alt="source" />
+            )}
           </div>
         </div>
         <div className="mt-6">
