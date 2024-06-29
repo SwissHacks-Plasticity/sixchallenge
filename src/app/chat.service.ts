@@ -30,7 +30,7 @@ const fetchCategories = async (questionPrompt: string, expectedResponseType: str
       }
     ];
 
-    const completion = await ai.getChatCompletions(model, messages);
+    const completion = await ai.getChatCompletions(model, messages, {temperature:0});
 
     if (completion.choices?.length > 0) {
       const sanitizedQuestion = sanitizeAnswer(completion.choices[0]?.message?.content || '');
@@ -63,7 +63,7 @@ const sanitizeAnswer = (answerAsString: string): string => {
 
 export const fetchSustainabilityCategories = async (company: string): Promise<SustainabilityCategory[] | null> => {
   const expectedResponseType = `["category1", "category2", "category3"]`;
-  const questionPrompt = `provide the best categories based on this set from the last csr report of the company ${company}`;
+  const questionPrompt = `evaluate the best categories based on the last csr report of the company ${company}`;
 
   return fetchCategories(questionPrompt, expectedResponseType);
 };
