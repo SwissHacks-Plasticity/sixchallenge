@@ -55,26 +55,30 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
         return 'background-bottle';
       case 1:
         return 'background-turtle';
-      case 2:
-        return 'background-no';
       default:
-        return 'background-no';
+        return 'background-no-image';
     }
   }
 
   return (
-    <div
-      className={`flex w-full flex-col justify-center relative items-center ${getBackgroundClass()}`}
-    >
-      <div>
+    <div className={`flex w-full flex-col justify-center relative ${getBackgroundClass()}`}>
+      <div className="px-[27vw]">
+        <button
+          className="button blue back mb-10"
+          onClick={onBack}
+          disabled={currentStepIndex === 0}
+        >
+          Back
+        </button>
         <CurrentStep />
+        <button
+          className="button blue mt-4"
+          onClick={onContinue}
+          disabled={currentStepIndex === WizardSteps.length - 1}
+        >
+          Next
+        </button>
       </div>
-      <button onClick={onBack} disabled={currentStepIndex === 0}>
-        Back
-      </button>
-      <button onClick={onContinue} disabled={currentStepIndex === WizardSteps.length - 1}>
-        Continue
-      </button>
     </div>
   );
 };

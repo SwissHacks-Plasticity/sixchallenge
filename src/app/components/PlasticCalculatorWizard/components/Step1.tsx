@@ -8,9 +8,12 @@ export const Step1: React.FC = () => {
 
   return (
     <div>
-      <h1>Step 1</h1>
+      <h1>Lorem ipsum ist Text, der gerne als Platzhalter</h1>
+      <label className="font-bold mb-2 block">Your Company</label>
       <Autocomplete></Autocomplete>
-      <button onClick={setCompany}>Set company</button>
+      <button className="button blue" onClick={setCompany}>
+        Set company
+      </button>
     </div>
   );
 };

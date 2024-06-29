@@ -11,10 +11,6 @@ export interface ColourOption {
 
 export default function Autocomplete() {
   const colourOptions: readonly ColourOption[] = [
-    { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
-    { value: 'blue', label: 'Blue', color: '#0052CC', isDisabled: true },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
     { value: 'orange', label: 'Orange', color: '#FF8B00' },
     { value: 'yellow', label: 'Yellow', color: '#FFC400' },
     { value: 'green', label: 'Green', color: '#36B37E' },
@@ -22,5 +18,27 @@ export default function Autocomplete() {
     { value: 'slate', label: 'Slate', color: '#253858' },
     { value: 'silver', label: 'Silver', color: '#666666' },
   ];
-  return <CreatableSelect isClearable options={colourOptions} className="w-64" />;
+  return (
+    <CreatableSelect
+      isClearable
+      options={colourOptions}
+      className="w-full"
+      styles={{
+        container: (base) => ({
+          ...base,
+          width: '90%',
+        }),
+        control: (baseStyles, state) => ({
+          ...baseStyles,
+          borderColor: state.isFocused ? '#C7E503' : '#C7E503',
+          borderWidth: '3px',
+          borderRadius: '10px',
+          height: '91px',
+          boxShadow: 'inset 0px 3px 10px #00000029;',
+          fontSize: '24px',
+          font: 'Poppins',
+        }),
+      }}
+    />
+  );
 }
