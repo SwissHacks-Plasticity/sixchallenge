@@ -72,7 +72,7 @@ export const Step3: React.FC<StepProps> = () => {
           </div>
         </section>
         <section className="w-[15vw] fixed right-[5vw] top-[30vh]">
-          <div className="font-bold mb-2 block text-3xl">Your need</div>
+          <div className="font-bold mb-2 block text-3xl">You need</div>
           <div className="text-blue font-bold text-3xl mb-6">
             {state.credits} xxx Credit to be net Circular Plastic
           </div>
