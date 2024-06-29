@@ -6,6 +6,7 @@ export type PlasticCalculatorState = {
   location?: string;
   employees?: number;
   revenue?: number;
+  credits?: number;
 };
 
 export type PlasticCalculatorContextProps = {

@@ -53,6 +53,10 @@
     padding: 10px 10px;
   }
 
+  &.filled {
+    @apply bg-blue text-white;
+  }
+
   &.back {
     border-top: none;
     border-left: none;
@@ -62,7 +66,19 @@
   }
 }
 
+p {
+  @apply font-bold text-3xl;
+}
+
+.white-box { 
+  box-shadow: 5px 5px 10px #00000029;
+  border: 3px solid #C7E503;
+  border-radius: 10px;
+}
 h1 {
   @apply text-6xl text-blue font-bold mb-10;
   line-height: 5rem;
+}
+h2 {
+  @apply text-blue font-bold text-3xl mb-6;
 }

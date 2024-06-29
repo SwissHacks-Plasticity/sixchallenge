@@ -18,6 +18,7 @@ export const PlasticCalculatorContext = createContext<PlasticCalculatorContextPr
     location: 'Switzerland',
     employees: 1000,
     revenue: 10000000,
+    credits: 22,
   },
   updateFormState: () => {},
 });
