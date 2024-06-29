@@ -84,7 +84,7 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
         </button>
         <CurrentStep />
         <button
-          className="button blue mt-4"
+          className="button blue right mt-4"
           onClick={onContinue}
           hidden={currentStepIndex === WizardSteps.length - 1}
         >
