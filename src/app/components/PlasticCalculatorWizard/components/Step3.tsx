@@ -5,6 +5,8 @@ import SliderInput from '../../SliderInput/SliderInput';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 import { StepProps } from '../types';
 import { RecyclingProject } from '@/app/data/types';
+import { Card } from '../../card';
+import Link from 'next/link';
 
 export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
@@ -32,17 +34,21 @@ export const Step3: React.FC<StepProps> = () => {
     });
   }, []);
 
-  const addProjectToCart = useCallback((project: RecyclingProject) => updateFormState({ recyclingProjectsCart: updateProjectsCart(project) }), [updateFormState]);
+  const addProjectToCart = useCallback(
+    (project: RecyclingProject) =>
+      updateFormState({ recyclingProjectsCart: updateProjectsCart(project) }),
+    [updateFormState],
+  );
 
   const updateProjectsCart = (project: RecyclingProject): RecyclingProject[] => {
-    const newState = state.recyclingProjectsCart || []
+    const newState = state.recyclingProjectsCart || [];
 
-    if(!newState.find((p)=> p.title === project.title)){
-      newState.push(project)
+    if (!newState.find((p) => p.title === project.title)) {
+      newState.push(project);
     }
 
-    return newState
-  }
+    return newState;
+  };
 
   return (
     <>
@@ -88,20 +94,25 @@ export const Step3: React.FC<StepProps> = () => {
         </section>
 
         <section className="bg-white my-20 px-16 py-10 white-box">
-          <p>{formatNumber(state.leakage)} Tons remaining to save Lorem ipsum ist Text der gerne.</p>
+          <p>
+            {formatNumber(state.leakage)} Tons remaining to save Lorem ipsum ist Text der gerne.
+          </p>
         </section>
         <section>
           <h2>We recommend these Projects</h2>
           {state.recyclingProjects &&
-            state.recyclingProjects
-              .slice(0, amountProjects)
-              .map((p) =>{
-                /* @ts-ignore */
-                return <Card project={p} onAdd={() => {
-                  addProjectToCart(p)
-                  setPercentage(percentage + 25);
-                }} />
-              })}
+            state.recyclingProjects.slice(0, amountProjects).map((p) => {
+              /* @ts-ignore */
+              return (
+                <Card
+                  project={p}
+                  onAdd={() => {
+                    addProjectToCart(p);
+                    setPercentage(percentage + 25);
+                  }}
+                />
+              );
+            })}
         </section>
 
         {amountProjects < (state.recyclingProjects?.length || 999) ? (
@@ -119,52 +130,10 @@ export const Step3: React.FC<StepProps> = () => {
           <span className="text-green">{state?.company?.name}</span> net Circular Plastic Future
         </h2>
         <h3 className="font-normal text-xl mb-6">Download your free personalized Factsheet</h3>
-        <button className="button">Show Summary</button>
+        <Link href="/summary" className="button">
+          Show Summary
+        </Link>
       </section>
     </>
-  );
-};
-
-type Project = {
-  name: string;
-  location: string;
-  employees: number;
-  revenue: number;
-  credits: number;
-  plasticTotal: number;
-  desc?: string;
-};
-
-const Card = ({ project, onAdd }: { project: Project; onAdd?: () => void }): JSX.Element => {
-  return (
-    <section className="w-full relative py-8">
-      <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us">
-        <h3>{project.name}</h3>
-        <div className="mb-3">{project.desc}</div>
-        <div className="flex">
-          <div className="mr-6">
-            <span className="text-sm">Certification</span>
-            <img src="/verra-logo.svg" className="w-[84px] h-[28px]" alt="cert" />
-          </div>
-          <div>
-            <span className="text-sm">Source</span>
-            <img src="/pcx-logo.webp" className="w-[84px] h-[28px] " alt="source" />
-          </div>
-        </div>
-        <div className="mt-6">
-          <button className="button blue filled mr-4" onClick={onAdd}>
-            Add
-          </button>
-          <button className="button blue">Details</button>
-        </div>
-      </div>
-      <img
-        src="https://picsum.photos/400"
-        alt="project picture"
-        className="border-lightgreen border-2 absolute top-0 left-0 block rounded-lg shadow-us"
-        width={300}
-        height={300}
-      />
-    </section>
   );
 };
