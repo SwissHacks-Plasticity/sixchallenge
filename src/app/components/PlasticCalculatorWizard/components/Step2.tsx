@@ -24,7 +24,7 @@ export const Step2: React.FC = () => {
     };
   }, [state]);
 
-  const calcStepSize = useCallback((maxValue)=> {
+  const calcStepSize = useCallback((maxValue: number)=> {
     return Math.pow(10,Math.floor(Math.log10(maxValue) - 2))
   }, [])
 

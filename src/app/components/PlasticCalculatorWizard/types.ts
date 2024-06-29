@@ -13,5 +13,5 @@ export type PlasticCalculatorState = {
 
 export type PlasticCalculatorContextProps = {
   state: PlasticCalculatorState;
-  updateFormState: (state: { company: Company }) => void;
+  updateFormState: (state: Partial<PlasticCalculatorState>) => void;
 };

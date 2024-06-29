@@ -1,5 +1,5 @@
 import React from 'react';
-import companies = require('../data/companies.json')
+import * as companies from '../data/companies.json';
 
 import CreatableSelect from 'react-select/creatable';
 import { Company } from '@/app/data/types';

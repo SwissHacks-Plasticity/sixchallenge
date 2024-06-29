@@ -19,6 +19,18 @@ export const Step3: React.FC = () => {
     desc: 'Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt.',
   };
 
+  const formatNumber = useCallback((number = 0)=> {
+    // Use the toLocaleString method to add suffixes to the number
+    return number.toLocaleString('en-US', {
+      // add suffixes for thousands, millions, and billions
+      // the maximum number of decimal places to use
+      maximumFractionDigits: 2,
+      // specify the abbreviations to use for the suffixes
+      notation: 'compact',
+      compactDisplay: 'short'
+    });
+  }, [])
+
   return (
     <>
       <div>
@@ -28,15 +40,15 @@ export const Step3: React.FC = () => {
         <section className="flex justify-between m-20 ">
           <div>
             <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.company?.numCountries} Locations</span>
+            <span className="text-blue font-bold">{formatNumber(state.company?.numCountries)} Locations</span>
           </div>
           <div>
             <img src="/employees.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.company?.numEmployees} Employees</span>
+            <span className="text-blue font-bold">{formatNumber(state.company?.numEmployees)} Employees</span>
           </div>
           <div>
             <img src="/cash.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.company?.totalRevenue} Revenue</span>
+            <span className="text-blue font-bold">{formatNumber(state.company?.totalRevenue)} Revenue</span>
           </div>
         </section>
         {/* <div className='contents'> */}
