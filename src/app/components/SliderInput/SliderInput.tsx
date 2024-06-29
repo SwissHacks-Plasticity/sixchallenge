@@ -46,8 +46,8 @@ const CalculatorInput = ({
     },
     [onChange]
   );
-  const onSliderChange = useCallback(
-    (sliderValue: number | number[]) => throttle(50, () => onChange(`${sliderValue}`)),
+  const onSliderChange = useCallback(throttle(100,
+    (sliderValue: number | number[]) => onChange(`${sliderValue}`)),
     [onChange]
   );
   const increaseValue = useCallback(() => {
