@@ -17,6 +17,7 @@ export type RecyclingProject = {
   certification: string;
   plasticTypes: PlasticType[];
   source: ProjectSource;
+  pricePerCredit: number
 };
 
 export const plasticTypes = ['PET', 'HDPE', 'LDPE', 'Other/Mixed', 'PVC', 'Polystyrene'] as const;

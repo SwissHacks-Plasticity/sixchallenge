@@ -10,6 +10,7 @@ export const Card = ({
   return (
     <section className="w-full relative py-8">
       <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us overflow-scroll">
+        <h4 className={"font-bold"}>CHF {project.pricePerCredit}.- per Credit</h4>
         <h3>{project.title}</h3>
         <div className="mb-3">{project.description}</div>
         <div className="flex">
