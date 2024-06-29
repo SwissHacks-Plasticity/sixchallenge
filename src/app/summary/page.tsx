@@ -31,7 +31,9 @@ export default function Summary() {
         <section className="flex justify-between mb-16">
           <div className="m-14 ml-0">
             <h3>Plastic Production</h3>
-            <h2 className="text-green">{formatSwissNumber(state?.plasticTotal || 0)} Tons</h2>
+            <h1 className="text-lightgreen mb-4">
+              {formatSwissNumber(state?.plasticTotal || 0)} Tons
+            </h1>
             <span className="text-sm">
               {formatSwissNumber(state?.plasticTotal || 0)} tons of plastic—equivalent to the weight
               of over {formatSwissNumber(Math.floor(state?.plasticTotal ?? 0 / 5) || 0)} elephants!
@@ -39,7 +41,9 @@ export default function Summary() {
           </div>
           <div className="m-14">
             <h3>Recycled plastic</h3>
-            <h2 className="text-green">{formatSwissNumber(state?.recycling || 0)} Tons</h2>
+            <h1 className="text-lightgreen mb-4">
+              {formatSwissNumber(state?.recycling || 0)} Tons
+            </h1>
             <span className="text-sm">
               {formatSwissNumber(state?.recycling || 0)} tons of plastic—equivalent to the weight of
               over {formatSwissNumber(Math.floor(state?.recycling ?? 1 / 5) || 0)} elephants!
@@ -47,7 +51,7 @@ export default function Summary() {
           </div>
           <div className="m-14">
             <h3>Leaked plastic</h3>
-            <h2 className="text-green">{formatSwissNumber(state?.leakage || 0)} Tons</h2>
+            <h1 className="text-lightgreen mb-4">{formatSwissNumber(state?.leakage || 0)} Tons</h1>
             <span className="text-sm">
               {formatSwissNumber(state?.leakage || 0)} tons of plastic—equivalent to the weight of
               over {formatSwissNumber(Math.floor(state?.leakage ?? 1 / 5) || 0)} elephants!
