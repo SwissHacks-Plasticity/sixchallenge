@@ -34,7 +34,7 @@ export default function Summary() {
             <h3>Plastic Production</h3>
             <h2 className="text-green">{formatSwissNumber(state?.plasticTotal || 0)} Tons</h2>
             <span className="text-sm">
-              75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
+              75 000 tons of plastic—equivalent to the weight of over 8 900 elephants!
             </span>
           </div>
           <div className="m-14">
@@ -44,7 +44,7 @@ export default function Summary() {
               Tons
             </h2>
             <span className="text-sm">
-              300 000 tons of plastic—equivalent to theweight of over 11 900 elephants!
+              300 000 tons of plastic—equivalent to the weight of over 11 900 elephants!
             </span>
           </div>
           <div className="m-14">
@@ -54,7 +54,7 @@ export default function Summary() {
               Tons
             </h2>
             <span className="text-sm">
-              75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
+              75 000 tons of plastic—equivalent to the weight of over 8 900 elephants!
             </span>
           </div>
         </section>
