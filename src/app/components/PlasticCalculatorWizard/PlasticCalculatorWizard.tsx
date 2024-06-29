@@ -6,33 +6,35 @@ import { Step2 } from './components/Step2';
 import { Step3 } from './components/Step3';
 import { PlasticCalculatorContextProps, PlasticCalculatorState, StepProps } from './types';
 import { LoadingStep } from './components/LoadingStep';
+import recyclingProjects from '@/app/data/recycling_projects.json';
+import { RecyclingProject } from '@/app/data/types';
 
 type StepConfig = {
   component: React.FC<StepProps>;
   canContinue?: boolean;
-  canGoBack?: boolean
-}
+  canGoBack?: boolean;
+};
 
 const WizardSteps: StepConfig[] = [
   {
     component: Step1,
     canContinue: true,
-    canGoBack: false
+    canGoBack: false,
   },
   {
     component: LoadingStep,
     canContinue: false,
-    canGoBack: false
+    canGoBack: false,
   },
   {
     component: Step2,
     canContinue: true,
-    canGoBack: false
+    canGoBack: false,
   },
   {
     component: Step3,
     canContinue: true,
-    canGoBack: true
+    canGoBack: true,
   },
 ];
 
@@ -46,6 +48,7 @@ export const PlasticCalculatorContext = createContext<PlasticCalculatorContextPr
     employees: 1000,
     revenue: 10000000,
     credits: 22,
+    recyclingProjects: recyclingProjects as RecyclingProject[],
   },
   updateFormState: () => {},
 });

@@ -1,4 +1,4 @@
-import { Company } from '@/app/data/types';
+import { Company, RecyclingProject } from '@/app/data/types';
 
 export type PlasticCalculatorState = {
   company?: Company;
@@ -9,6 +9,7 @@ export type PlasticCalculatorState = {
   employees?: number;
   revenue?: number;
   credits?: number;
+  recyclingProjects?: RecyclingProject[];
 };
 
 export type PlasticCalculatorContextProps = {
