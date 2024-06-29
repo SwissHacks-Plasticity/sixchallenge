@@ -1,13 +1,21 @@
-import { useCallback } from 'react';
+"use client";
+
+import { useCallback, useState } from 'react';
 import SliderInput from '../../SliderInput/SliderInput';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 
 export const Step3: React.FC = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
-  const setTotal = useCallback(
-    (value: string) => updateFormState({ plasticTotal: Number(value) }),
-    [updateFormState]
-  );
+  const [percentage, setPercentage] = useState(0);
+  const project = {
+    name: 'Project 1', 
+    location: 'Switzerland', 
+    employees: 1000, 
+    revenue: 10000000, 
+    credits: 22, 
+    plasticTotal: 25, 
+    desc: "Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt."
+  };
 
   return (
     <div>
@@ -35,13 +43,11 @@ export const Step3: React.FC = () => {
         </div>
         <SliderInput
           hideInputNumber={true}
-          value={String(state.plasticTotal ?? 0)}
+          value={String(percentage ?? 0)}
           min="0"
-          max="100000"
-          stepSize={100}
-          onChange={setTotal}
-          disabled={true}
-        />
+          max="100"
+          stepSize={25}
+          disabled={true} onChange={(value) => {}}/>
       </section>
       <section className='bg-white my-20 px-16 py-10 white-box'>
         <p>22,3 Tons remaining to save Lorem ipsum ist Text der gerne.</p>
@@ -50,7 +56,7 @@ export const Step3: React.FC = () => {
 
       <h2>We recommend these Projects</h2>
       
-        <Card project={{name: 'Project 1', location: 'Switzerland', employees: 1000, revenue: 10000000, credits: 22, plasticTotal: 10000, desc: "Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt."}}/>
+        <Card project={project} onAdd={() => setPercentage(percentage + 25)}/>
       </section>
     </div>
   );
@@ -68,12 +74,12 @@ type Project ={
 } 
 
 
-const Card = ({project}: {project: Project}):JSX.Element => {
+const Card = ({project, onAdd}: {project: Project, onAdd?: () => void}):JSX.Element => {
   return (
-      <section className='w-full relative py-16'>
-        <div className=' bg-white border-lightgreen border-2 rounded right-0 bottom-0 ml-[250px] my-6 pl-16 py-6 pr-2'>
+      <section className='w-full relative py-8'>
+        <div className=' bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-2 shadow-us'>
           <h3>{project.name}</h3>
-          <span>{project.desc}</span>
+          <div className='mb-3'>{project.desc}</div>
           <div className='flex'>
             <div className='mr-6'>
               <span  className='text-sm'>Certification</span>
@@ -85,11 +91,11 @@ const Card = ({project}: {project: Project}):JSX.Element => {
             </div>
           </div>
           <div className='mt-6'>
-            <button className='button blue filled mr-4'>Add</button>
-            <button className='button blue'>Add</button>
+            <button className='button blue filled mr-4' onClick={onAdd}>Add</button>
+            <button className='button blue'>Details</button>
           </div>
         </div>
-        <img src="https://picsum.photos/400" alt="project picture" className='border-lightgreen border-2 absolute top-0 left-0 block rounded' width={300} height={300}/>
+        <img src="https://picsum.photos/400" alt="project picture" className='border-lightgreen border-2 absolute top-0 left-0 block rounded-lg shadow-us' width={300} height={300}/>
       </section>
   );
 };

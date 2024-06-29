@@ -82,3 +82,12 @@ h1 {
 h2 {
   @apply text-blue font-bold text-3xl mb-6;
 }
+
+h3 {
+  font-size: 30px;
+  @apply font-bold mb-3;
+}
+
+.shadow-us {
+  box-shadow: 5px 5px 10px #00000021;
+}
