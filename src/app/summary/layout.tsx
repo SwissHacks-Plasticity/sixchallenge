@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default function SummaryLayout({
   children,
@@ -8,7 +9,7 @@ export default function SummaryLayout({
   return (
     <>
       <main className="flex flex-col min-h-screen background-gradient-onlyblue text-white">
-        {children}
+        <Suspense>{children}</Suspense>
       </main>
 
       <footer className="bg-darkBlue flex items-center flex-col text-xl text-white">

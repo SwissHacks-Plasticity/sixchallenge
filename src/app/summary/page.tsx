@@ -1,6 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { Card } from '../components/card';
+import { Suspense } from 'react';
 
 export default function Summary() {
   const searchParams = useSearchParams();
