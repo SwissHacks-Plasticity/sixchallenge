@@ -45,8 +45,8 @@
     "numCountries": 210,
     "numEmployees": 56000,
     "totalRevenue": 69800000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 8,
+    "plasticRecycledRate": 0.4,
     "plasticLeakageRate": 0.1
   },
   {
@@ -65,8 +65,8 @@
     "numCountries": 100,
     "numEmployees": 105000,
     "totalRevenue": 3220000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 136,
+    "plasticRecycledRate": 0.5,
     "plasticLeakageRate": 0.1
   },
   {
