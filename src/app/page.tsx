@@ -6,17 +6,9 @@ import { PlasticCalculatorWizard } from './components/PlasticCalculatorWizard/Pl
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        className="dark:invert"
-        width={100}
-        height={24}
-        priority
-      />
-      <Autocomplete></Autocomplete>
-      <PlasticCalculatorWizard />
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 background-gradient-blue">
+      <img src="/Logo_gross.svg" alt="Vercel Logo" className="w-full h-full" />
+      <button>Take Action</button>
     </main>
   );
 }

@@ -7,7 +7,14 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: { lightblue: '#7395EB', blue: '#4242D2', green: '#B7B722', lightgreen: '#D6DB47' },
+    colors: {
+      white: '#fff',
+      black: '#000',
+      lightblue: '#7395EB',
+      blue: '#4242D2',
+      green: '#B7B722',
+      lightgreen: '#D6DB47',
+    },
     fontFamily: {
       sans: ['var(--font-poppins)'],
     },
