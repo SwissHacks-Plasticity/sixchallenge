@@ -30,7 +30,7 @@ export const Step3: React.FC<StepProps> = () => {
       const newState = updateProjectsCart(project);
       updateFormState({ recyclingProjectsCart: newState });
       localStorage.setItem('recyclingProjectsCart', JSON.stringify(newState));
-      localStorage.setItem('company', JSON.stringify(state.company));
+      localStorage.setItem('state', JSON.stringify(state));
     },
     [updateFormState],
   );
@@ -72,7 +72,7 @@ export const Step3: React.FC<StepProps> = () => {
           </div>
         </section>
         <section className="w-[15vw] fixed right-[5vw] top-[30vh]">
-          <div className="font-bold mb-2 block text-3xl">Your need</div>
+          <div className="font-bold mb-2 block text-3xl">You need</div>
           <div className="text-blue font-bold text-3xl mb-6">
             {formatNumber(state.leakage)} Credits to be net Circular Plastic
           </div>
