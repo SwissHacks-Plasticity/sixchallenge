@@ -1,9 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { formatSwissNumber } from '../components/PlasticCalculatorWizard/components/ResultStep';
 import { Card } from '../components/card';
 import { Company, RecyclingProject } from '../data/types';
-
+function formatSwissNumber(number: number) {
+  const formatter = new Intl.NumberFormat('de-CH', {});
+  return formatter.format(number).replace(/,/g, "'");
+}
 export default function Summary() {
   const [company, setCompany] = useState<Company>();
   const [projects, setProjects] = useState<RecyclingProject[]>([]);
