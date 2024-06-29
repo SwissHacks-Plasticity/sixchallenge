@@ -11,7 +11,6 @@ export default function Summary() {
   const [state, setState] = useState<PlasticCalculatorState>();
   const [projects, setProjects] = useState<RecyclingProject[]>([]);
 
-
   useEffect(() => {
     const state = JSON.parse(localStorage.getItem('state') ?? '{}') as PlasticCalculatorState;
     const projects = JSON.parse(
@@ -34,27 +33,24 @@ export default function Summary() {
             <h3>Plastic Production</h3>
             <h2 className="text-green">{formatSwissNumber(state?.plasticTotal || 0)} Tons</h2>
             <span className="text-sm">
-              {formatSwissNumber(state?.plasticTotal || 0)} tons of plastic—equivalent to the weight of over {formatSwissNumber(Math.floor(state?.plasticTotal / 5) || 0)} elephants!
+              {formatSwissNumber(state?.plasticTotal || 0)} tons of plastic—equivalent to the weight
+              of over {formatSwissNumber(Math.floor(state?.plasticTotal ?? 0 / 5) || 0)} elephants!
             </span>
           </div>
           <div className="m-14">
             <h3>Recycled plastic</h3>
-            <h2 className="text-green">
-              {formatSwissNumber(state?.recycling || 0)}{' '}
-              Tons
-            </h2>
+            <h2 className="text-green">{formatSwissNumber(state?.recycling || 0)} Tons</h2>
             <span className="text-sm">
-               {formatSwissNumber(state?.recycling || 0)} tons of plastic—equivalent to the weight of over  {formatSwissNumber(Math.floor(state?.recycling / 5) || 0)} elephants!
+              {formatSwissNumber(state?.recycling || 0)} tons of plastic—equivalent to the weight of
+              over {formatSwissNumber(Math.floor(state?.recycling / 5) || 0)} elephants!
             </span>
           </div>
           <div className="m-14">
             <h3>Leaked plastic</h3>
-            <h2 className="text-green">
-              {formatSwissNumber(state?.leakage || 0)}{' '}
-              Tons
-            </h2>
+            <h2 className="text-green">{formatSwissNumber(state?.leakage || 0)} Tons</h2>
             <span className="text-sm">
-              {formatSwissNumber(state?.leakage || 0)} tons of plastic—equivalent to the weight of over {formatSwissNumber(Math.floor(state?.leakage / 5) || 0)} elephants!
+              {formatSwissNumber(state?.leakage || 0)} tons of plastic—equivalent to the weight of
+              over {formatSwissNumber(Math.floor(state?.leakage / 5) || 0)} elephants!
             </span>
           </div>
         </section>
