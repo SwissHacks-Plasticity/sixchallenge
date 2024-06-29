@@ -1,14 +1,5 @@
 import { AzureKeyCredential, OpenAIClient } from '@azure/openai';
-
-export enum SustainabilityCategory {
-  UPCYCLING ="UPCYCLING",
-  COMMUNITY_COLLECTION = "COMMUNITY_COLLECTION",
-  WOMEN_EMPOWERMENT ="WOMEN_EMPOWERMENT",
-  OCEAN="OCEAN",
-  INFRASTRUCTURE_INVESTMENT="INFRASTRUCTURE_INVESTMENT",
-  DIVERSION_FROM_MISMANAGEMENT="DIVERSION_FROM_MISMANAGEMENT",
-  INCREASE_RECYCLED_FEEDSTOCK="INCREASE_RECYCLED_FEEDSTOCK",
-}
+import { sustainabilityCategories, SustainabilityCategory } from '@/app/data/types';
 
 const ai = new OpenAIClient(
   'https://swisshacks-aoai.openai.azure.com/',
@@ -17,27 +8,24 @@ const ai = new OpenAIClient(
 
 const fetchCategories = async (questionPrompt: string, expectedResponseType: string) => {
   try {
-
     const model = 'gpt-4o';
     const messages = [
       {
         role: 'system',
-        content: `you are a sustainability expert and evaluate the 3 best matching categories from this list ${getCategoriesAsCommaSeparatedString()} based on the last csr report of a company. answer only in json format: ${expectedResponseType}`
+        content: `you are a sustainability expert and evaluate the 3 best matching categories from this list ${getCategoriesAsCommaSeparatedString()} based on the last csr report of a company. answer only in json format: ${expectedResponseType}`,
       },
       {
         role: 'user',
-        content: questionPrompt
-      }
+        content: questionPrompt,
+      },
     ];
 
-    const completion = await ai.getChatCompletions(model, messages, {temperature:0});
+    const completion = await ai.getChatCompletions(model, messages, { temperature: 0 });
 
     if (completion.choices?.length > 0) {
       const sanitizedQuestion = sanitizeAnswer(completion.choices[0]?.message?.content || '');
-      console.log(sanitizedQuestion)
       return JSON.parse(sanitizedQuestion);
     }
-
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -46,7 +34,7 @@ const fetchCategories = async (questionPrompt: string, expectedResponseType: str
 };
 
 const getCategoriesAsCommaSeparatedString = (): string => {
-  return Object.values(SustainabilityCategory).join(', ');
+  return sustainabilityCategories.join(', ');
 };
 
 const sanitizeAnswer = (answerAsString: string): string => {
@@ -60,11 +48,11 @@ const sanitizeAnswer = (answerAsString: string): string => {
   }
 };
 
-
-export const fetchSustainabilityCategories = async (company: string): Promise<SustainabilityCategory[] | null> => {
+export const fetchSustainabilityCategories = async (
+  company: string,
+): Promise<SustainabilityCategory[] | null> => {
   const expectedResponseType = `["category1", "category2", "category3"]`;
   const questionPrompt = `evaluate the best categories based on the last csr report of the company ${company}`;
 
   return fetchCategories(questionPrompt, expectedResponseType);
 };
-
