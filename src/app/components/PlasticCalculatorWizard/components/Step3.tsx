@@ -89,9 +89,7 @@ export const Step3: React.FC<StepProps> = () => {
         </section>
 
         <section className="bg-white my-20 px-16 py-10 white-box">
-          <p>
-            {formatNumber(state.leakage)} Tons remaining to save Lorem ipsum ist Text der gerne.
-          </p>
+          <p>{formatNumber(state.leakage)} Tons remaining to a prosperous and greener future.</p>
         </section>
         <section>
           <h2>We recommend these Projects</h2>

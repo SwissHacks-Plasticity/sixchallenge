@@ -42,7 +42,7 @@ export default function Summary() {
             <h2 className="text-green">{formatSwissNumber(state?.recycling || 0)} Tons</h2>
             <span className="text-sm">
               {formatSwissNumber(state?.recycling || 0)} tons of plastic—equivalent to the weight of
-              over {formatSwissNumber(Math.floor(state?.recycling / 5) || 0)} elephants!
+              over {formatSwissNumber(Math.floor(state?.recycling ?? 1 / 5) || 0)} elephants!
             </span>
           </div>
           <div className="m-14">
@@ -50,7 +50,7 @@ export default function Summary() {
             <h2 className="text-green">{formatSwissNumber(state?.leakage || 0)} Tons</h2>
             <span className="text-sm">
               {formatSwissNumber(state?.leakage || 0)} tons of plastic—equivalent to the weight of
-              over {formatSwissNumber(Math.floor(state?.leakage / 5) || 0)} elephants!
+              over {formatSwissNumber(Math.floor(state?.leakage ?? 1 / 5) || 0)} elephants!
             </span>
           </div>
         </section>
