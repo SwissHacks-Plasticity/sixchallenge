@@ -8,6 +8,7 @@ import { PlasticCalculatorContextProps, PlasticCalculatorState, StepProps } from
 import { LoadingStep } from './components/LoadingStep';
 import { recyclingProjects } from '@/app/data/recycling_projects';
 import { ResultStep } from './components/ResultStep';
+import { usePlasticCalculatorWizardState } from './hooks/usePlasticCalculatorWizardState';
 
 type StepConfig = {
   component: React.FC<StepProps>;
@@ -83,6 +84,7 @@ export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ 
 
 export const PlasticCalculatorWizardHandler: React.FC = () => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const { state: { company }} = usePlasticCalculatorWizardState();
 
   const onContinue = useCallback(
     () => setCurrentStepIndex(Math.min(WizardSteps.length - 1, currentStepIndex + 1)),
@@ -118,7 +120,7 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
           className="button blue right mt-4"
           onClick={onContinue}
           hidden={!currentStep.canContinue}
-          disabled={!currentStep.canContinue}
+          disabled={!currentStep.canContinue || !company}
         >
           Next
         </button>
