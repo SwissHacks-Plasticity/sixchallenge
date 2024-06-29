@@ -10,7 +10,15 @@ import { Step4 } from './components/Step4';
 const WizardSteps = [Step1, Step2, Step3, Step4];
 
 export const PlasticCalculatorContext = createContext<PlasticCalculatorContextProps>({
-  state: {},
+  state: {
+    company: 'Givaudan',
+    plasticTotal: 0,
+    leakage: 0,
+    recycling: 0,
+    location: 'Switzerland',
+    employees: 1000,
+    revenue: 10000000,
+  },
   updateFormState: () => {},
 });
 
