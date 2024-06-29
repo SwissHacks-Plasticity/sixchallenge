@@ -10,7 +10,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'HDPE'],
     source: 'PCX',
-    pricePerCredit: 800
+    pricePerCredit: 800,
+    image: '/projects/upcycling-ghana.webp',
   },
   {
     title: 'Women Empowerment Through Upcycling',
@@ -21,7 +22,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['LDPE', 'Other/Mixed'],
     source: 'rePurpose',
-    pricePerCredit: 1000
+    pricePerCredit: 1000,
+    image: '/projects/upcycling-women.jpg',
   },
   {
     title: 'Ocean Plastic Recovery in Thailand',
@@ -32,7 +34,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'PVC'],
     source: 'PCX',
-    pricePerCredit: 1200
+    pricePerCredit: 1200,
+    image: 'projects/ocean-thailand.webp',
   },
   {
     title: 'Community Collection and Recycling',
@@ -43,7 +46,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['HDPE', 'Polystyrene'],
     source: 'rePurpose',
-    pricePerCredit: 1150
+    pricePerCredit: 1150,
+    image: 'projects/community-recycling.jpg',
   },
   {
     title: 'Plastic Infrastructure Investment in India',
@@ -54,7 +58,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'LDPE'],
     source: 'PCX',
-    pricePerCredit: 900
+    pricePerCredit: 900,
+    image: 'projects/india-infrastructure.webp',
   },
   {
     title: 'Swiss Plastic Recycling for Sustainability',
@@ -65,7 +70,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['PET', 'HDPE', 'Polystyrene'],
     source: 'ImpactHub',
-    pricePerCredit: 700
+    pricePerCredit: 700,
+    image: '/projects/swiss-recycling.webp',
   },
   {
     title: 'Ghana Community Ocean Cleanup',
@@ -76,7 +82,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'LDPE'],
     source: 'PCX',
-    pricePerCredit: 1000
+    pricePerCredit: 1000,
+    image: '/projects/ocean-turtle.jpg',
   },
   {
     title: 'Women-Led Plastic Recycling in Nicaragua',
@@ -87,7 +94,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['HDPE', 'PVC'],
     source: 'ImpactHub',
-    pricePerCredit: 950
+    pricePerCredit: 950,
+    image: '/projects/recycling-nicaragua.jpg',
   },
   {
     title: 'Thai Infrastructure and Ocean Protection',
@@ -98,7 +106,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'HDPE'],
     source: 'PCX',
-    pricePerCredit: 1300
+    pricePerCredit: 1300,
+    image: '/projects/thai-ocean-infra.jpg',
   },
   {
     title: 'Indonesia Plastic Circular Economy',
@@ -109,7 +118,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['PET', 'Other/Mixed'],
     source: 'ImpactHub',
-    pricePerCredit: 750
+    pricePerCredit: 750,
+    image: '/projects/ocean-bag.jpg',
   },
   {
     title: 'Empowering Women in Indian Plastic Recycling',
@@ -120,7 +130,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['LDPE', 'Polystyrene'],
     source: 'PCX',
-    pricePerCredit: 850
+    pricePerCredit: 850,
+    image: '/projects/women-indian-recycling.jpg',
   },
   {
     title: 'Sustainable Swiss Plastic Innovations',
@@ -131,7 +142,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['PET', 'PVC', 'Other/Mixed'],
     source: 'ImpactHub',
-    pricePerCredit: 1150
+    pricePerCredit: 1150,
+    image: '/projects/swiss-forest.jpg',
   },
   {
     title: "Ghana's Women-Led Ocean Cleanup",
@@ -142,7 +154,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'HDPE'],
     source: 'PCX',
-    pricePerCredit: 950
+    pricePerCredit: 950,
+    image: '/projects/coast-recycling.jpg',
   },
   {
     title: 'Community-Driven Recycling in Nicaragua',
@@ -153,7 +166,8 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'Verra PWRS',
     plasticTypes: ['LDPE', 'PVC'],
     source: 'ImpactHub',
-    pricePerCredit: 600
+    pricePerCredit: 600,
+    image: '/projects/community-nicaragua.jpg',
   },
   {
     title: 'Advanced Thai Plastic Recycling',
@@ -164,6 +178,7 @@ export const recyclingProjects: RecyclingProject[] = [
     certification: 'PPRS',
     plasticTypes: ['PET', 'Polystyrene'],
     source: 'PCX',
-    pricePerCredit: 850
+    pricePerCredit: 850,
+    image: '/projects/advanced-thai.jpg',
   },
 ];

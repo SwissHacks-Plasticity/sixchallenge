@@ -104,11 +104,15 @@ export const Step3: React.FC<StepProps> = () => {
               })}
         </section>
 
-        <section className="flex justify-center my-12">
-          <button className="button blue" onClick={() => setAmountProjects(amountProjects + 3)}>
-            More Projects
-          </button>
-        </section>
+        {amountProjects < (state.recyclingProjects?.length || 999) ? (
+          <section className="flex justify-center my-12">
+            <button className="button blue" onClick={() => setAmountProjects(amountProjects + 3)}>
+              More Projects
+            </button>
+          </section>
+        ) : (
+          <></>
+        )}
       </div>
       <section className="bg-blue p-8 text-white rounded-lg mb-8">
         <h2 className="text-white">
