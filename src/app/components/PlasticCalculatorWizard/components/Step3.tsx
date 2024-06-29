@@ -35,8 +35,12 @@ export const Step3: React.FC<StepProps> = () => {
   }, []);
 
   const addProjectToCart = useCallback(
-    (project: RecyclingProject) =>
-      updateFormState({ recyclingProjectsCart: updateProjectsCart(project) }),
+    (project: RecyclingProject) => {
+      const newState = updateProjectsCart(project);
+      updateFormState({ recyclingProjectsCart: newState });
+      localStorage.setItem('recyclingProjectsCart', JSON.stringify(newState));
+      localStorage.setItem('company', JSON.stringify(state.company));
+    },
     [updateFormState],
   );
 

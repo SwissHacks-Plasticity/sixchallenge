@@ -1,12 +1,13 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
-import { Card } from '../components/card';
-import { Suspense, useCallback } from 'react';
-import { Company } from '../data/types';
 import { formatSwissNumber } from '../components/PlasticCalculatorWizard/components/ResultStep';
+import { Card } from '../components/card';
+import { Company, RecyclingProject } from '../data/types';
 
 export default function Summary() {
   const company = JSON.parse(localStorage.getItem('company') ?? '{}') as Company;
+  const projects = JSON.parse(
+    localStorage.getItem('recyclingProjectsCart') ?? '{}',
+  ) as RecyclingProject[];
 
   return (
     <>
@@ -57,10 +58,9 @@ export default function Summary() {
         <section className="mb-24">
           <h2 className="text-white mb-16">We recommend these Projects</h2>
           <section className="grid grid-cols-2 gap-16 text-black">
-            {/* <Card project={project} onAdd={() => {}} />
-            <Card project={project} onAdd={() => {}} />
-            <Card project={project} onAdd={() => {}} />
-            <Card project={project} onAdd={() => {}} /> */}
+            {projects.map((project: RecyclingProject) => (
+              <Card project={project} onAdd={() => {}} />
+            ))}
           </section>
         </section>
         <section className="mb-32">
