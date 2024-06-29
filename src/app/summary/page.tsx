@@ -60,7 +60,7 @@ export default function Summary() {
         </section>
         <section className="mb-24">
           <h2 className="text-white mb-16">We recommend these Projects</h2>
-          <section className="grid grid-cols-2 gap-16">
+          <section className="grid grid-cols-2 gap-16 text-black">
             <Card project={project} onAdd={() => {}} />
             <Card project={project} onAdd={() => {}} />
             <Card project={project} onAdd={() => {}} />
