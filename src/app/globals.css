@@ -6,6 +6,10 @@
   background: transparent radial-gradient(closest-side at 50% 50%, #fcffe5 0%, #dcf343 100%) 0% 0%
     no-repeat padding-box;
 }
+.background-gradient-onlyblue {
+  background: transparent radial-gradient(closest-side at 50% 50%, #7395eb 0%, #4242d2 100%) 0% 0%
+    no-repeat padding-box;
+}
 .background-gradient-blue {
   background: transparent radial-gradient(closest-side at 50% 50%, #7395eb 0%, #4242d2 100%) 0% 0%
     no-repeat padding-box;
@@ -68,15 +72,27 @@
     padding-bottom: 2px;
     border-radius: 0;
   }
+
+  &.green {
+    @apply text-blue;
+    background: #dcf343 0% 0% no-repeat padding-box;
+    border: 5px solid #dcf343;
+    border-radius: 5px;
+    opacity: 1;
+  }
+
+  &.bigtext {
+    @apply text-3xl;
+  }
 }
 
 p {
   @apply font-bold text-3xl;
 }
 
-.white-box { 
+.white-box {
   box-shadow: 5px 5px 10px #00000029;
-  border: 3px solid #C7E503;
+  border: 3px solid #c7e503;
   border-radius: 10px;
 }
 h1 {
@@ -96,10 +112,9 @@ h3 {
   box-shadow: 5px 5px 10px #00000021;
 }
 
-
 .unstuck {
-	height: 0;
-	overflow-y: visible;
-	position: relative;
-	z-index: 1;
+  height: 0;
+  overflow-y: visible;
+  position: relative;
+  z-index: 1;
 }
