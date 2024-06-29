@@ -1,48 +1,43 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { Card } from '../components/card';
-import { Suspense } from 'react';
+import { Suspense, useCallback } from 'react';
+import { Company } from '../data/types';
+import { formatSwissNumber } from '../components/PlasticCalculatorWizard/components/ResultStep';
 
 export default function Summary() {
-  const searchParams = useSearchParams();
-  const company = JSON.parse(searchParams.get('search') ?? '');
-
-  const project = {
-    name: 'Project 1',
-    location: 'Switzerland',
-    employees: 1000,
-    revenue: 10000000,
-    credits: 22,
-    plasticTotal: 25,
-    desc: 'Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt.',
-  };
+  const company = JSON.parse(localStorage.getItem('company') ?? '{}') as Company;
 
   return (
     <>
       <img src="/Summary-Logo.svg" alt="" />
       <main className="flex flex-col mx-20">
         <h1 className="text-white">
-          <span className="text-green">XXXX </span>
+          <span className="text-green">{company.name} </span>
           Plastic Footprint
         </h1>
         <section className="flex justify-between mb-16">
           <div className="m-14 ml-0">
             <h3>Plastic Production</h3>
-            <h2 className="text-green">xxxx Tons</h2>
+            <h2 className="text-green">{formatSwissNumber(company.totalPlastic)} Tons</h2>
             <span className="text-sm">
               75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
             </span>
           </div>
           <div className="m-14">
             <h3>Recycled plastic</h3>
-            <h2 className="text-green">xxxx Tons</h2>
+            <h2 className="text-green">
+              {formatSwissNumber(company.totalPlastic * company.plasticRecycledRate)} Tons
+            </h2>
             <span className="text-sm">
               300 000 tons of plastic—equivalent to theweight of over 11 900 elephants!
             </span>
           </div>
           <div className="m-14">
             <h3>Leaked plastic</h3>
-            <h2 className="text-green">xxxx Tons</h2>
+            <h2 className="text-green">
+              {formatSwissNumber(company.totalPlastic * company.plasticLeakageRate)} Tons
+            </h2>
             <span className="text-sm">
               75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
             </span>
@@ -50,7 +45,7 @@ export default function Summary() {
         </section>
         <section className="mb-16">
           <h1 className="text-white">
-            <span className="text-green">XXXX </span>
+            <span className="text-green">{company.name} </span>
             net Circular Plastic Future
           </h1>
           <h2 className="text-white">
@@ -62,10 +57,10 @@ export default function Summary() {
         <section className="mb-24">
           <h2 className="text-white mb-16">We recommend these Projects</h2>
           <section className="grid grid-cols-2 gap-16 text-black">
+            {/* <Card project={project} onAdd={() => {}} />
             <Card project={project} onAdd={() => {}} />
             <Card project={project} onAdd={() => {}} />
-            <Card project={project} onAdd={() => {}} />
-            <Card project={project} onAdd={() => {}} />
+            <Card project={project} onAdd={() => {}} /> */}
           </section>
         </section>
         <section className="mb-32">

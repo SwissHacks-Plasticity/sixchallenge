@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Suspense } from 'react';
+import { PlasticCalculatorContextProvider } from '../components/PlasticCalculatorWizard/PlasticCalculatorWizard';
 
 export default function SummaryLayout({
   children,
@@ -9,7 +9,7 @@ export default function SummaryLayout({
   return (
     <>
       <main className="flex flex-col min-h-screen background-gradient-onlyblue text-white">
-        <Suspense>{children}</Suspense>
+        {children}
       </main>
 
       <footer className="bg-darkBlue flex items-center flex-col text-xl text-white">
