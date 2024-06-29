@@ -1,26 +1,34 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { formatSwissNumber } from '../components/PlasticCalculatorWizard/components/ResultStep';
 import { Card } from '../components/card';
 import { Company, RecyclingProject } from '../data/types';
 
 export default function Summary() {
-  const company = JSON.parse(localStorage.getItem('company') ?? '{}') as Company;
-  const projects = JSON.parse(
-    localStorage.getItem('recyclingProjectsCart') ?? '{}',
-  ) as RecyclingProject[];
+  const [company, setCompany] = useState<Company>();
+  const [projects, setProjects] = useState<RecyclingProject[]>([]);
+
+  useEffect(() => {
+    const company = JSON.parse(localStorage.getItem('company') ?? '{}') as Company;
+    const projects = JSON.parse(
+      localStorage.getItem('recyclingProjectsCart') ?? '[{}]',
+    ) as RecyclingProject[];
+    setCompany(company);
+    setProjects(projects);
+  }, []);
 
   return (
     <>
       <img src="/Summary-Logo.svg" alt="" />
       <main className="flex flex-col mx-20">
         <h1 className="text-white">
-          <span className="text-green">{company.name} </span>
+          <span className="text-green">{company?.name} </span>
           Plastic Footprint
         </h1>
         <section className="flex justify-between mb-16">
           <div className="m-14 ml-0">
             <h3>Plastic Production</h3>
-            <h2 className="text-green">{formatSwissNumber(company.totalPlastic)} Tons</h2>
+            <h2 className="text-green">{formatSwissNumber(company?.totalPlastic ?? 0)} Tons</h2>
             <span className="text-sm">
               75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
             </span>
@@ -28,7 +36,8 @@ export default function Summary() {
           <div className="m-14">
             <h3>Recycled plastic</h3>
             <h2 className="text-green">
-              {formatSwissNumber(company.totalPlastic * company.plasticRecycledRate)} Tons
+              {formatSwissNumber(company?.totalPlastic ?? 1 * (company?.plasticRecycledRate ?? 1))}{' '}
+              Tons
             </h2>
             <span className="text-sm">
               300 000 tons of plastic—equivalent to theweight of over 11 900 elephants!
@@ -37,7 +46,8 @@ export default function Summary() {
           <div className="m-14">
             <h3>Leaked plastic</h3>
             <h2 className="text-green">
-              {formatSwissNumber(company.totalPlastic * company.plasticLeakageRate)} Tons
+              {formatSwissNumber(company?.totalPlastic ?? 1 * (company?.plasticLeakageRate ?? 1))}{' '}
+              Tons
             </h2>
             <span className="text-sm">
               75 000 tons of plastic—equivalent to theweight of over 8 900 elephants!
@@ -46,7 +56,7 @@ export default function Summary() {
         </section>
         <section className="mb-16">
           <h1 className="text-white">
-            <span className="text-green">{company.name} </span>
+            <span className="text-green">{company?.name} </span>
             net Circular Plastic Future
           </h1>
           <h2 className="text-white">
