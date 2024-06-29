@@ -18,7 +18,7 @@ export const ResultStep: React.FC<StepProps> = ({ handleContinue }) => {
 
   return (
     <div>
-      <h1 className="mb-2 mt-20">{formatSwissNumber(leakage ?? 0)} tons</h1>
+      <h1 className="mb-2 mt-20">{formatSwissNumber(leakage ?? 0)} tons of plastic</h1>
       <h2>equivalent to the weight of over {formatSwissNumber(nrOfElephants ?? 0)} elephants!</h2>
       <div className="text-left mt-20">
         <button className="button blue filled mb-5" onClick={handleContinue}>
