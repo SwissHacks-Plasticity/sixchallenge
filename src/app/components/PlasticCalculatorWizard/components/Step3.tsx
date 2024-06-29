@@ -10,6 +10,7 @@ import { StepProps } from '../types';
 export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const [percentage, setPercentage] = useState(0);
+  const [amountProjects, setAmountProjects] = useState(3);
   const project = {
     name: 'Project 1',
     location: 'Switzerland',
@@ -80,12 +81,16 @@ export const Step3: React.FC<StepProps> = () => {
         </section>
         <section>
           <h2>We recommend these Projects</h2>
-
-          <Card project={project} onAdd={() => setPercentage(percentage + 25)} />
+          {state.recyclingProjects &&
+            state.recyclingProjects
+              .slice(0, amountProjects)
+              .map((p) => <Card project={p} onAdd={() => setPercentage(percentage + 25)} />)}
         </section>
 
         <section className="flex justify-center my-12">
-          <button className="button blue">More Projects</button>
+          <button className="button blue" onClick={() => setAmountProjects(amountProjects + 3)}>
+            More Projects
+          </button>
         </section>
       </div>
       <section className="bg-blue p-8 text-white rounded-lg mb-8">

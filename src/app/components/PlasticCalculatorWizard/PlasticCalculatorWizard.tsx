@@ -6,8 +6,7 @@ import { Step2 } from './components/Step2';
 import { Step3 } from './components/Step3';
 import { PlasticCalculatorContextProps, PlasticCalculatorState, StepProps } from './types';
 import { LoadingStep } from './components/LoadingStep';
-import recyclingProjects from '@/app/data/recycling_projects.json';
-import { RecyclingProject } from '@/app/data/types';
+import { recyclingProjects } from '@/app/data/recycling_projects';
 
 type StepConfig = {
   component: React.FC<StepProps>;
@@ -48,13 +47,12 @@ export const PlasticCalculatorContext = createContext<PlasticCalculatorContextPr
     employees: 1000,
     revenue: 10000000,
     credits: 22,
-    recyclingProjects: recyclingProjects as RecyclingProject[],
   },
   updateFormState: () => {},
 });
 
 export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [state, setState] = useState<PlasticCalculatorState>({});
+  const [state, setState] = useState<PlasticCalculatorState>({ recyclingProjects });
 
   const updateFormState = useCallback(
     (values: Partial<PlasticCalculatorState>) => {

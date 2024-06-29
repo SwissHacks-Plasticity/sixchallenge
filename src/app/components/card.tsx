@@ -1,23 +1,25 @@
-export type Project = {
-  name: string;
-  location: string;
-  employees: number;
-  revenue: number;
-  credits: number;
-  plasticTotal: number;
-  desc?: string;
-};
+import { RecyclingProject } from '@/app/data/types';
 
-export const Card = ({ project, onAdd }: { project: Project; onAdd?: () => void }): JSX.Element => {
+export const Card = ({
+  project,
+  onAdd,
+}: {
+  project: RecyclingProject;
+  onAdd?: () => void;
+}): JSX.Element => {
   return (
     <section className="w-full relative py-8">
       <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us overflow-scroll">
-        <h3>{project.name}</h3>
-        <div className="mb-3">{project.desc}</div>
+        <h3>{project.title}</h3>
+        <div className="mb-3">{project.description}</div>
         <div className="flex">
           <div className="mr-6">
             <span className="text-sm">Certification</span>
-            <img src="/verra-logo.svg" className="w-[84px] h-[28px]" alt="cert" />
+            <img
+              src={project.certification === 'Verra PWRS' ? '/verra-logo.svg' : '/pprs.png'}
+              className="w-[84px] h-[28px]"
+              alt="cert"
+            />
           </div>
           <div>
             <span className="text-sm">Source</span>

@@ -105,9 +105,9 @@ export const companies = [
     "numCountries": 100,
     "numEmployees": 16000,
     "totalRevenue": 690000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 62972,
+    "plasticRecycledRate": 0.02,
+    "plasticLeakageRate": 0.15
   },
   {
     "name": "Holcim Limited",
@@ -205,8 +205,8 @@ export const companies = [
     "numCountries": 100,
     "numEmployees": 21500,
     "totalRevenue": 11480000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 70600,
+    "plasticRecycledRate": 0.2,
+    "plasticLeakageRate": 0.15
   }
 ]
