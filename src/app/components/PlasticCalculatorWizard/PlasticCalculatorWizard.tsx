@@ -30,7 +30,7 @@ export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ 
       console.log('Updating state with', values);
       setState({ ...state, ...values });
     },
-    [state, setState]
+    [state, setState],
   );
 
   useEffect(() => console.log('New state', state), [state]);
@@ -47,12 +47,12 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
 
   const onContinue = useCallback(
     () => setCurrentStepIndex(Math.min(WizardSteps.length - 1, currentStepIndex + 1)),
-    [currentStepIndex, setCurrentStepIndex]
+    [currentStepIndex, setCurrentStepIndex],
   );
 
   const onBack = useCallback(
     () => setCurrentStepIndex(Math.max(0, currentStepIndex - 1)),
-    [currentStepIndex, setCurrentStepIndex]
+    [currentStepIndex, setCurrentStepIndex],
   );
 
   const CurrentStep = useMemo(() => WizardSteps[currentStepIndex], [currentStepIndex]);
@@ -69,11 +69,10 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
   }
 
   console.log('Current step index', currentStepIndex);
-  
 
   return (
     <div className={`flex w-full flex-col justify-center relative ${getBackgroundClass()}`}>
-      <div className="px-[27vw]">
+      <div className="px-[27vw] py-20">
         <button
           className="button blue back mb-10"
           onClick={onBack}

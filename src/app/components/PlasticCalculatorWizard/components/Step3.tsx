@@ -54,7 +54,7 @@ export const Step3: React.FC = () => {
             disabled={true}
             onChange={(value) => {}}
           />
-          <button className="button blue absolute right-[216px] top-[490px]">Checkout</button>
+          <button className="button blue absolute right-[216px] top-[564px]">Checkout</button>
         </section>
 
         {/* <section className="w-full sticky top-0 left-0 right-0 bg-blue">
