@@ -102,9 +102,9 @@ export const companies = [
   {
     "name": "Givaudan SA",
     "industry": "Fragrance",
-    "numCountries": 100,
+    "numCountries": 167,
     "numEmployees": 16000,
-    "totalRevenue": 690000000,
+    "totalRevenue": 6900000000,
     "totalPlastic": 62972,
     "plasticRecycledRate": 0.02,
     "plasticLeakageRate": 0.15

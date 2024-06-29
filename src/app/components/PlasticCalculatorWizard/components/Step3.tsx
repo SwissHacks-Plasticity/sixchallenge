@@ -95,7 +95,6 @@ export const Step3: React.FC<StepProps> = () => {
           <h2>We recommend these Projects</h2>
           {state.recyclingProjects &&
             state.recyclingProjects.slice(0, amountProjects).map((p) => {
-              /* @ts-ignore */
               return (
                 <Card
                   project={p}
