@@ -32,9 +32,6 @@ export const Step2: React.FC = () => {
   const currentLeakage = useMemo(() => Math.min(leakage, maxLeakage), [maxLeakage, leakage])
   const currentRecycling = useMemo(() => Math.min(recycling, maxRecycling), [maxRecycling, recycling])
 
-
-  console.log({leakagePercentage, recyclingPercentage, maxLeakage, maxRecycling, currentLeakage, currentRecycling });
-
   return <div>
     <h1>Your Plastic Footprint</h1>
     <section className="flex flex-col gap-5">
@@ -49,9 +46,7 @@ export const Step2: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-row gap-5">
-        <SliderInput value={String(currentLeakage)} label="Leaked Plastic" min="0" max={String(maxLeakage)} stepSize={1000} onChange={setLeakage}
-          mark={String(currentRecycling)} markLabel="Recycling"
-        />
+        <SliderInput value={String(currentLeakage)} label="Leaked Plastic" min="0" max={String(maxLeakage)} stepSize={1000} onChange={setLeakage} />
         <div className="border-bordergreen border-4 rounded-lg shadow-lg px-5 py-3 bg-white w-1/3 flex flex-col justify-center">
           <h3 className='font-semibold text-xs'>Leakage Rate</h3>
           <div className="text-3xl font-bold align-text-top">
