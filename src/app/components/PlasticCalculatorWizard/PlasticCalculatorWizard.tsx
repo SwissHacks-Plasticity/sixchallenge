@@ -7,11 +7,13 @@ import { Step3 } from './components/Step3';
 import { PlasticCalculatorContextProps, PlasticCalculatorState, StepProps } from './types';
 import { LoadingStep } from './components/LoadingStep';
 import { recyclingProjects } from '@/app/data/recycling_projects';
+import { ResultStep } from './components/ResultStep';
 
 type StepConfig = {
   component: React.FC<StepProps>;
   canContinue?: boolean;
   canGoBack?: boolean;
+  backgroundClass?: string;
 };
 
 const WizardSteps: StepConfig[] = [
@@ -19,16 +21,24 @@ const WizardSteps: StepConfig[] = [
     component: Step1,
     canContinue: true,
     canGoBack: false,
+    backgroundClass: 'background-bottle'
   },
   {
     component: LoadingStep,
     canContinue: false,
     canGoBack: false,
+    backgroundClass: 'background-turtle'
   },
   {
     component: Step2,
     canContinue: true,
     canGoBack: false,
+  },
+  {
+    component: ResultStep,
+    canContinue: false,
+    canGoBack: true,
+    backgroundClass: 'background-elephant'
   },
   {
     component: Step3,
@@ -86,21 +96,14 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
 
   const currentStep = useMemo(() => WizardSteps[currentStepIndex], [currentStepIndex]);
 
-  function getBackgroundClass() {
-    switch (currentStepIndex) {
-      case 0:
-        return 'background-bottle';
-      case 2:
-        return 'background-turtle';
-      default:
-        return 'background-no-image';
-    }
-  }
+  const backgroundClass = useMemo(()=> {
+    return currentStep.backgroundClass ?? 'background-no-image'
+  }, [currentStep])
 
   console.log('Current step index', currentStepIndex);
 
   return (
-    <div className={`flex w-full flex-col justify-center relative ${getBackgroundClass()}`}>
+    <div className={`flex w-full flex-col justify-center relative ${backgroundClass}`}>
       <div className="px-[27vw] py-20">
         <button
           className="button blue back mb-10"

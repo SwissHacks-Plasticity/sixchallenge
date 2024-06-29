@@ -45,6 +45,13 @@
   background-repeat: no-repeat;
 }
 
+.background-elephant {
+  background-image: url('/elephant.svg');
+  background-position: bottom right;
+  background-size: 40%;
+  background-repeat: no-repeat;
+}
+
 .button {
   @apply border border-white text-xl text-white font-bold;
   border-width: 5px;
