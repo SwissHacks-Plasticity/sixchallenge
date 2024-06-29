@@ -2,7 +2,9 @@ import React, { useCallback, useId, useMemo } from 'react'
 import Decimal from 'decimal.js'
 import { NumericFormat } from 'react-number-format'
 import Slider from 'rc-slider'
-import 'rc-slider/assets/index.css';
+import './SliderInput.css';
+import Handle from 'rc-slider/lib/Handles/Handle';
+import { TonneIcon } from '../TonneIcon/TonneIcon';
 
 
 type CalculatorInputProps = {
@@ -30,24 +32,24 @@ const CalculatorInput = ({
   label,
   id: idProp,
 }: CalculatorInputProps) => {
-  const id = useId()
-  const valueAsNumber = Number(value)
+  const id = useId();
+  const valueAsNumber = Number(value);
   const onValueChange = useCallback(
     ({ value }: any) => {
       onChange(`${value}`)
     },
     [onChange]
-  )
+  );
   const onSliderChange = useCallback(
     (sliderValue: number | number[]) => onChange(`${sliderValue}`),
     [onChange]
-  )
+  );
   const increaseValue = useCallback(() => {
     onChange(new Decimal(value ?? 0).add(stepSize).toString())
-  }, [value, onChange, stepSize])
+  }, [value, onChange, stepSize]);
   const decreaseValue = useCallback(() => {
     onChange(Decimal.max(0, new Decimal(value ?? 0).sub(stepSize)).toString())
-  }, [value, onChange, stepSize])
+  }, [value, onChange, stepSize]);
 
   const marks = useMemo(() => {
     if (!mark) {
@@ -58,41 +60,74 @@ const CalculatorInput = ({
         label: markLabel,
       },
     }
-  }, [mark, markLabel])
+  }, [mark, markLabel]);
 
   return (
     <div>
-      <label htmlFor={idProp || id}>
+      <label htmlFor={idProp || id} className='font-semibold text-l'>
         {label}
       </label>
       <div>
-        <NumericFormat
-          id={id}
-          value={value}
-          valueIsNumericString={true}
-          thousandSeparator="'"
-          decimalScale={0}
-          allowNegative={false}
-          onValueChange={onValueChange}
-        />
-        <button
-          onClick={decreaseValue}
-        >
-          -
-        </button>
-        <button
-          onClick={increaseValue}
-        >
-          +
-        </button>
+        <div className='p-2 relative bg-white flex flex-row border-4 border-bordergreen rounded-lg text-blue font-bold text-xl'>
+          <div className='w-14 mr-2'>
+            <TonneIcon/>
+          </div>
+          <NumericFormat
+            id={id}
+            value={value}
+            valueIsNumericString={true}
+            thousandSeparator="'"
+            decimalScale={0}
+            allowNegative={false}
+            onValueChange={onValueChange}
+            className='pt-1 w-full outline-0'
+          />
+          <div className='flex flex-row text-2xl font-semibold'>
+            <button
+            className='px-3'
+              onClick={decreaseValue}>
+              -
+            </button>
+            <button
+              className='px-3 border-bordergreen border-l-4'
+
+              onClick={increaseValue}>
+              +
+            </button>
+          </div>
+        </div>
 
         <Slider
+          className='my-2'
           onChange={onSliderChange}
           min={Number(min)}
           max={Number(max)}
           step={stepSize}
           marks={marks}
           value={valueAsNumber}
+          handleRender={(handleRenderProps: any) =>
+            <Handle {...(handleRenderProps?.props ?? {})}>
+              <img src='/Turtle_02.png' className='pointer-events-none' />
+            </Handle>
+          }
+          styles={{
+            rail: {
+
+              background: '#ffffff',
+              height: '8px'
+            },
+            track: {
+
+              background: '#4242d2',
+              height: '8px'
+            },
+            handle: {
+              background: 'unset',
+              width: '50px',
+              height: '50px',
+              border: 'none'
+            }
+          }}
         />
       </div>
     </div>

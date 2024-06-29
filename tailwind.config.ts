@@ -15,12 +15,14 @@ const config: Config = {
       blue: '#4242D2',
       green: '#B7B722',
       lightgreen: '#D6DB47',
+      bordergreen: '#C7E503'
     },
     fontFamily: {
       sans: ['var(--font-poppins)'],
     },
     fontWeight: {
       normal: '300',
+      semibold: '600',
       bold: '700',
     },
   },
