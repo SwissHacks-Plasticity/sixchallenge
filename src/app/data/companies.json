@@ -27,7 +27,7 @@
     "totalRevenue": 45400000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Richemont SA",
@@ -57,7 +57,7 @@
     "totalRevenue": 4080000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "ABB Ltd",
@@ -75,8 +75,8 @@
     "numCountries": 35,
     "numEmployees": 18000,
     "totalRevenue": 672000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 48000,
+    "plasticRecycledRate": 0.3,
     "plasticLeakageRate": 0.1
   },
   {
@@ -85,8 +85,8 @@
     "numCountries": 100,
     "numEmployees": 33000,
     "totalRevenue": 1049000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 21000,
+    "plasticRecycledRate": 0.2,
     "plasticLeakageRate": 0.1
   },
   {
@@ -97,17 +97,17 @@
     "totalRevenue": 946000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Givaudan SA",
-    "industry": "Chemistry",
+    "industry": "Fragrance",
     "numCountries": 100,
     "numEmployees": 16000,
     "totalRevenue": 690000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Holcim Limited",
@@ -117,7 +117,7 @@
     "totalRevenue": 2680000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Swisscom AG",
@@ -125,8 +125,8 @@
     "numCountries": 1,
     "numEmployees": 19000,
     "totalRevenue": 1107000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 10,
+    "plasticRecycledRate": 0.67,
     "plasticLeakageRate": 0.1
   },
   {
@@ -137,7 +137,7 @@
     "totalRevenue": 49900000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Partners Group Holding AG",
@@ -147,7 +147,7 @@
     "totalRevenue": 1900000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Sonova",
@@ -155,9 +155,9 @@
     "numCountries": 100,
     "numEmployees": 14000,
     "totalRevenue": 2640000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "totalPlastic": 541,
+    "plasticRecycledRate": 0.54,
+    "plasticLeakageRate": 0
   },
   {
     "name": "Geberit AG",
@@ -167,7 +167,7 @@
     "totalRevenue": 986000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Swiss Life Holding AG",
@@ -177,7 +177,7 @@
     "totalRevenue": 19800000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Logitech International SA",
@@ -187,7 +187,7 @@
     "totalRevenue": 4300000000,
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0.1
+    "plasticLeakageRate": 0
   },
   {
     "name": "Kuehne + Nagel",
@@ -198,5 +198,15 @@
     "totalPlastic": 0,
     "plasticRecycledRate": 0,
     "plasticLeakageRate": 0.1
+  },
+  {
+    "name": "International Flavors & Fragrances",
+    "industry": "Fragrance",
+    "numCountries": 100,
+    "numEmployees": 21500,
+    "totalRevenue": 11480000000,
+    "totalPlastic": 0,
+    "plasticRecycledRate": 0,
+    "plasticLeakageRate": 0
   }
 ]
