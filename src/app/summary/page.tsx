@@ -64,9 +64,10 @@ export default function Summary() {
             net Circular Plastic Future
           </h1>
           <h2 className="text-white">
-            Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen
-            «richtigen» Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten
-            Eindruck von dem finalen Layout vermittelt.
+            {state?.company?.name} is committed to achieving 100% circular plastic by 2030. You have{' '}
+            {formatSwissNumber(state?.leakage ?? 0)} tons remaining to offset. Select from our
+            recommended projects to meet your sustainability goals and contribute to a greener
+            future.
           </h2>
         </section>
         <section className="mb-24">
