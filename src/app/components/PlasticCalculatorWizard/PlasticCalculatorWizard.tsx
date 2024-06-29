@@ -35,7 +35,7 @@ export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ 
 };
 
 export const PlasticCalculatorWizardHandler: React.FC = () => {
-  const [currentStepIndex, setCurrentStepIndex] = useState(1);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
   const onContinue = useCallback(
     () => setCurrentStepIndex(Math.min(WizardSteps.length - 1, currentStepIndex + 1)),
