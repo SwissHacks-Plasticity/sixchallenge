@@ -3,6 +3,7 @@ import companies = require('../data/companies.json')
 
 import CreatableSelect from 'react-select/creatable';
 import { Company } from '@/app/data/types';
+import { OnChangeValue } from 'react-select';
 export interface CompanyOption {
   readonly value: Company;
   readonly label: string;
@@ -18,11 +19,20 @@ export default function Autocomplete({onChange}: Props) {
   const companyOptions: readonly CompanyOption[] = companies.map(company => ({
     value: company, label: company.name
   }));
+
+  const doChange= (onChangeValue: OnChangeValue<any, any>) => {
+    console.log(onChangeValue)
+
+    if(onChangeValue?.value){
+      onChange(onChangeValue.value)
+    }
+  }
+
   return (
     <CreatableSelect
       isClearable
       options={companyOptions}
-      onChange={(val)=> onChange(val.value)}
+      onChange={doChange}
       className="w-full"
       styles={{
         container: (base) => ({
