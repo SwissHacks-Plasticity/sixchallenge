@@ -18,6 +18,7 @@ export const Step3: React.FC = () => {
   };
 
   return (
+    <>
     <div>
       <h1>
         {state.company} <span className="text-black">at a glance</span>
@@ -36,19 +37,36 @@ export const Step3: React.FC = () => {
           <span className="text-blue font-bold">{state.revenue} Revenue</span>
         </div>
       </section>
-      <section className="w-full">
-        <div className="font-bold mb-2 block text-3xl">Your need</div>
-        <div className="text-blue font-bold text-3xl mb-6">
-          {state.credits} xxx Credit to be net Circular Plastic
-        </div>
-        <SliderInput
-          hideInputNumber={true}
-          value={String(percentage ?? 0)}
-          min="0"
-          max="100"
-          stepSize={25}
-          disabled={true} onChange={(value) => {}}/>
-      </section>
+      {/* <div className='contents'> */}
+        <section className="w-full"> {/* add class unstuck */}
+          <div className="font-bold mb-2 block text-3xl">Your need</div>
+          <div className="text-blue font-bold text-3xl mb-6">
+            {state.credits} xxx Credit to be net Circular Plastic
+          </div>
+          <SliderInput
+            hideInputNumber={true}
+            value={String(percentage ?? 0)}
+            min="0"
+            max="100"
+            stepSize={25}
+            disabled={true} onChange={(value) => {}}/>
+            <button className='button blue absolute right-[216px] top-[374px]'>Checkout</button>
+        </section>
+
+        {/* <section className="w-full sticky top-0 left-0 right-0 bg-blue">
+          <div className="font-bold mb-2 block text-3xl">Your need</div>
+          <div className="text-blue font-bold text-3xl mb-6">
+            {state.credits} xxx Credit to be net Circular Plastic
+          </div>
+          <SliderInput
+            hideInputNumber={true}
+            value={String(percentage ?? 0)}
+            min="0"
+            max="100"
+            stepSize={25}
+            disabled={true} onChange={(value) => {}}/>
+        </section> */}
+      {/* </div> */}
       <section className='bg-white my-20 px-16 py-10 white-box'>
         <p>22,3 Tons remaining to save Lorem ipsum ist Text der gerne.</p>
       </section>
@@ -58,7 +76,17 @@ export const Step3: React.FC = () => {
       
         <Card project={project} onAdd={() => setPercentage(percentage + 25)}/>
       </section>
+
+      <section className='flex justify-center my-12'>
+        <button className='button blue'>More Projects</button>
+        </section>
     </div>
+        <section className='bg-blue p-8 text-white rounded-lg mb-8'>
+        <h2 className='text-white'><span className='text-green'>{state.company}</span> net Circular Plastic Future</h2>
+        <h3 className='font-normal text-xl mb-6'>Download your free personalized Factsheet</h3>
+        <button className='button'>Show Summary</button>
+      </section>
+    </>
   );
 };
 

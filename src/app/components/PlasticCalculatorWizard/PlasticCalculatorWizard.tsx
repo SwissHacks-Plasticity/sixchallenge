@@ -1,13 +1,12 @@
 'use client';
 
 import { PropsWithChildren, createContext, useCallback, useEffect, useMemo, useState } from 'react';
-import { PlasticCalculatorContextProps, PlasticCalculatorState } from './types';
 import { Step1 } from './components/Step1';
 import { Step2 } from './components/Step2';
 import { Step3 } from './components/Step3';
-import { Step4 } from './components/Step4';
+import { PlasticCalculatorContextProps, PlasticCalculatorState } from './types';
 
-const WizardSteps = [Step1, Step2, Step3, Step4];
+const WizardSteps = [Step1, Step2, Step3];
 
 export const PlasticCalculatorContext = createContext<PlasticCalculatorContextProps>({
   state: {
@@ -69,6 +68,9 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
     }
   }
 
+  console.log('Current step index', currentStepIndex);
+  
+
   return (
     <div className={`flex w-full flex-col justify-center relative ${getBackgroundClass()}`}>
       <div className="px-[27vw]">
@@ -84,7 +86,7 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
         <button
           className="button blue mt-4"
           onClick={onContinue}
-          disabled={currentStepIndex === WizardSteps.length - 1}
+          hidden={currentStepIndex === WizardSteps.length - 1}
         >
           Next
         </button>

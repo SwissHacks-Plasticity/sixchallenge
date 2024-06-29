@@ -91,3 +91,11 @@ h3 {
 .shadow-us {
   box-shadow: 5px 5px 10px #00000021;
 }
+
+
+.unstuck {
+	height: 0;
+	overflow-y: visible;
+	position: relative;
+	z-index: 1;
+}

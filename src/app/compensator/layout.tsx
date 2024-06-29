@@ -10,6 +10,7 @@ export default function CompensatorLayout({
       <main className="flex min-h-screen background-gradient-green justify-center ">
         {children}
       </main>
+      
       <footer className="bg-darkBlue flex items-center flex-col text-xl text-white">
         <Image
           src="/Logo_button_negativ.svg"
