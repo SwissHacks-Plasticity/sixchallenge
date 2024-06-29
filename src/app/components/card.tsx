@@ -35,7 +35,7 @@ export const Card = ({
         </div>
       </div>
       <img
-        src="https://picsum.photos/400"
+        src={project.image}
         alt="project picture"
         className="border-lightgreen border-2 absolute top-0 left-0 block rounded-lg shadow-us"
         width={300}
