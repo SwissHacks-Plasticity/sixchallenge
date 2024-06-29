@@ -33,7 +33,7 @@ const WizardSteps: StepConfig[] = [
   },
   {
     component: Step3,
-    canContinue: true,
+    canContinue: false,
     canGoBack: true,
   },
 ];
