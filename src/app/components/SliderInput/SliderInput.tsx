@@ -5,6 +5,7 @@ import Slider from 'rc-slider';
 import './SliderInput.css';
 import Handle from 'rc-slider/lib/Handles/Handle';
 import { TonneIcon } from '../TonneIcon/TonneIcon';
+import { throttle } from 'throttle-debounce';
 
 type CalculatorInputProps = {
   min: string;
@@ -46,7 +47,7 @@ const CalculatorInput = ({
     [onChange]
   );
   const onSliderChange = useCallback(
-    (sliderValue: number | number[]) => onChange(`${sliderValue}`),
+    (sliderValue: number | number[]) => throttle(50, onChange(`${sliderValue}`)),
     [onChange]
   );
   const increaseValue = useCallback(() => {
@@ -68,7 +69,7 @@ const CalculatorInput = ({
   }, [mark, markLabel]);
 
   return (
-    <div>
+    <div className='w-full'>
       <label htmlFor={idProp || id} className="font-semibold text-l">
         {label}
       </label>
