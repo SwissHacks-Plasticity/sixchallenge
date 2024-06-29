@@ -26,7 +26,7 @@ export default function Autocomplete() {
       styles={{
         container: (base) => ({
           ...base,
-          width: '90%',
+          width: '100%',
         }),
         control: (baseStyles, state) => ({
           ...baseStyles,

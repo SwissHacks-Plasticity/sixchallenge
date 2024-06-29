@@ -41,18 +41,20 @@ export const Step2: React.FC = () => {
       <SliderInput value={String(plasticTotal)} label="Plastic Production" min="0" max={String(maxTotal)} stepSize={1000} onChange={setTotal}/>
       <div className="flex flex-row gap-5">
         <SliderInput value={String(currentRecycling)} label="Recycled Plastic" min="0" max={String(maxRecycling)} stepSize={1000} onChange={setRecycling}/>
-        <div className="border-bordergreen border-4 rounded-lg shadow-lg px-5 py-3 bg-white w-1/3">
+        <div className="border-bordergreen border-4 rounded-lg shadow-lg px-5 py-3 bg-white w-1/3 flex flex-col justify-center">
           <h3 className='font-semibold text-xs'>Recycled Rate</h3>
-          <div className="py-5 text-3xl font-bold align-text-top">
+          <div className="text-3xl font-bold align-text-top">
             <span className='text-4xl'>{recyclingPercentage}</span>%
           </div>
         </div>
       </div>
       <div className="flex flex-row gap-5">
-        <SliderInput value={String(currentLeakage)} label="Leaked Plastic" min="0" max={String(maxLeakage)} stepSize={1000} onChange={setLeakage}/>
-        <div className="border-bordergreen border-4 rounded-lg shadow-lg px-5 py-3 bg-white w-1/3">
+        <SliderInput value={String(currentLeakage)} label="Leaked Plastic" min="0" max={String(maxLeakage)} stepSize={1000} onChange={setLeakage}
+          mark={String(currentRecycling)} markLabel="Recycling"
+        />
+        <div className="border-bordergreen border-4 rounded-lg shadow-lg px-5 py-3 bg-white w-1/3 flex flex-col justify-center">
           <h3 className='font-semibold text-xs'>Leakage Rate</h3>
-          <div className="py-5 text-3xl font-bold align-text-top">
+          <div className="text-3xl font-bold align-text-top">
             <span className='text-4xl'>{leakagePercentage}</span>%
           </div>
         </div>
