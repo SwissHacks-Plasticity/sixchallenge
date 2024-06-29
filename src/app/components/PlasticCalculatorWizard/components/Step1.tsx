@@ -6,13 +6,19 @@ import { StepProps } from '../types';
 
 export const Step1: React.FC<StepProps> = () => {
   const { updateFormState } = usePlasticCalculatorWizardState();
-  const setCompany = useCallback((company: Company) => updateFormState({ company: company }), [updateFormState]);
+  const setCompany = useCallback((company: Company) => {
+    const total = company.totalPlastic;
+    const recycling = total * (company.plasticRecycledRate);
+    const leakage = (total - recycling) * (company.plasticLeakageRate);
+
+    updateFormState({ company: company, plasticTotal: total, recycling: recycling, leakage: leakage });
+  }, [updateFormState]);
 
   return (
     <div>
       <h1>Lorem ipsum ist Text, der gerne als Platzhalter</h1>
-      <label className="font-bold mb-2 block">Your Company</label>
-      <Autocomplete onChange={setCompany}/>
+      <label className='font-bold mb-2 block'>Your Company</label>
+      <Autocomplete onChange={setCompany} />
     </div>
   );
 };
