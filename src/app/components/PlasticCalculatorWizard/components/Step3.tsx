@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import SliderInput from '../../SliderInput/SliderInput';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 import { StepProps } from '../types';
+import { RecyclingProject } from '@/app/data/types';
 
 export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
@@ -30,6 +31,18 @@ export const Step3: React.FC<StepProps> = () => {
       compactDisplay: 'short',
     });
   }, []);
+
+  const addProjectToCart = useCallback((project: RecyclingProject) => updateFormState({ recyclingProjectsCart: updateProjectsCart(project) }), [updateFormState]);
+
+  const updateProjectsCart = (project: RecyclingProject): RecyclingProject[] => {
+    const newState = state.recyclingProjectsCart || []
+
+    if(!newState.find((p)=> p.title === project.title)){
+      newState.push(project)
+    }
+
+    return newState
+  }
 
   return (
     <>
@@ -84,7 +97,10 @@ export const Step3: React.FC<StepProps> = () => {
               .slice(0, amountProjects)
               .map((p) =>{
                 /* @ts-ignore */
-                return <Card project={p} onAdd={() => setPercentage(percentage + 25)} />
+                return <Card project={p} onAdd={() => {
+                  addProjectToCart(p)
+                  setPercentage(percentage + 25);
+                }} />
               })}
         </section>
 

@@ -10,6 +10,7 @@ export type PlasticCalculatorState = {
   revenue?: number;
   credits?: number;
   recyclingProjects?: RecyclingProject[];
+  recyclingProjectsCart?: RecyclingProject[];
 };
 
 export type PlasticCalculatorContextProps = {
