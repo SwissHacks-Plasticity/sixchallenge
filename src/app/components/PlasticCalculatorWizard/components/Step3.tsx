@@ -7,11 +7,15 @@ import { StepProps } from '../types';
 import { RecyclingProject } from '@/app/data/types';
 import { Card } from '../../card';
 import Link from 'next/link';
+import Confetti from 'react-confetti/';
+import useWindowSize from 'react-use/lib/useWindowSize';
+
 
 export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const [percentage, setPercentage] = useState(0);
   const [amountProjects, setAmountProjects] = useState(3);
+  const { width, height } = useWindowSize();
 
   const formatNumber = useCallback((number = 0) => {
     // Use the toLocaleString method to add suffixes to the number
@@ -47,26 +51,33 @@ export const Step3: React.FC<StepProps> = () => {
 
   return (
     <>
+      {percentage >= 100 && <div className='fixed top-0 left-0 z-10'>
+        <Confetti
+        width={width}
+        height={height}
+      />
+      </div>
+      }
       <div>
         <h1>
           {state?.company?.name ?? ''} <span className="text-black">at a glance</span>
         </h1>
         <section className="flex justify-between m-20 ">
           <div>
-            <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">
+            <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2 mx-auto" />
+            <span className="text-blue font-bold text-2xl">
               {formatNumber(state.company?.numCountries)} Locations
             </span>
           </div>
           <div>
-            <img src="/employees.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">
+            <img src="/employees.svg" alt="" width={100} height={100} className="mb-2 mx-auto" />
+            <span className="text-blue font-bold text-2xl">
               {formatNumber(state.company?.numEmployees)} Employees
             </span>
           </div>
           <div>
-            <img src="/cash.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">
+            <img src="/cash.svg" alt="" width={100} height={100} className="mb-2 mx-auto" />
+            <span className="text-blue font-bold text-2xl">
               {formatNumber(state.company?.totalRevenue)} Revenue
             </span>
           </div>
@@ -118,10 +129,10 @@ export const Step3: React.FC<StepProps> = () => {
         )}
       </div>
       <section className="bg-blue p-8 text-white rounded-lg mb-8">
-        <h2 className="text-white">
-          <span className="text-green">{state?.company?.name}</span> net Circular Plastic Future
+        <h2 className="text-white mb-2">
+          <span className="text-white">{state?.company?.name}</span> net Circular Plastic Future
         </h2>
-        <h3 className="font-normal text-xl mb-6">Download your free personalized Factsheet</h3>
+        <h3 className="font-normal text-xl mb-10">Download your free personalized Factsheet</h3>
         <Link href="/summary" className="button">
           Show Summary
         </Link>
