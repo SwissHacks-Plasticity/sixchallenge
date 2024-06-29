@@ -17,7 +17,7 @@ export const Card = ({
           <div className="mr-6">
             <span className="text-sm">Certification</span>
             <img
-              src={project.certification === 'Verra PWRS' ? '/Verra-logo.svg' : '/pprs.png'}
+              src={project.certification === 'Verra PWRS' ? '/Verra-Logo.svg' : '/pprs.png'}
               className="w-[84px] h-[28px]"
               alt="cert"
             />
