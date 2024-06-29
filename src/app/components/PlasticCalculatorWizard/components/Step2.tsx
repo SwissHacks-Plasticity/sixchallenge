@@ -32,7 +32,7 @@ export const Step2: React.FC<StepProps> = () => {
   const maxLeakage = useMemo(() => plasticTotal ? plasticTotal - recycling : 0, [plasticTotal, recycling]);
   const maxRecycling = useMemo(() => plasticTotal ? plasticTotal : 0, [plasticTotal]);
 
-  const leakagePercentage = useMemo(() => (plasticTotal ? (leakage / maxLeakage) * 100 : 0).toFixed(1), [plasticTotal, leakage]);
+  const leakagePercentage = useMemo(() => (plasticTotal && maxLeakage ? (leakage / maxLeakage) * 100 : 0).toFixed(1), [plasticTotal, leakage]);
   const recyclingPercentage = useMemo(() => (plasticTotal ? (recycling / plasticTotal) * 100 : 0).toFixed(1), [plasticTotal, recycling]);
 
   const currentLeakage = useMemo(() => Math.min(leakage, maxLeakage), [maxLeakage, leakage]);
