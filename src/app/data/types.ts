@@ -1,3 +1,14 @@
+export type Company = {
+  name: string;
+  industry: string;
+  numCountries: number;
+  numEmployees: number;
+  totalRevenue: number;
+  totalPlastic: number;
+  plasticRecycledRate: number;
+  plasticLeakageRate: number;
+};
+
 export type RecyclingProject = {
   title: string;
   description: string;
