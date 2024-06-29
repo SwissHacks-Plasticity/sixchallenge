@@ -24,7 +24,6 @@ const fetchCategories = async (questionPrompt: string, expectedResponseType: str
 
     if (completion.choices?.length > 0) {
       const sanitizedQuestion = sanitizeAnswer(completion.choices[0]?.message?.content || '');
-      console.log(sanitizedQuestion);
       return JSON.parse(sanitizedQuestion);
     }
   } catch (error) {
