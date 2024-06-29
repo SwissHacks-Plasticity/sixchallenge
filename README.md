@@ -1,46 +1,31 @@
-# sixchallenge
-# Sustainability Tools for Listed Companies
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Case Introduction:
+## Getting Started
 
-Sustainability matters for a multitude of reasons, encompassing environmental,f social, and economic dimensions. By prioritizing sustainability, we can create a more equitable, resilient, and prosperous world of present and future generations. Unfortunately, in the absence of standardization, gathering of accurate and reliable data on sustainability performance of a company across various operations, supply chain complexity, high cost of implementation, constantly changing regulations and standards, and lack of skilled resources are some of the challenges listed companies are facing today to provide meaningful information to investors regarding their progress on sustainability. Thus, it is not surprising that most of the investors mistrust the sustainability information that listed companies disclose and doubt that they will be able to implement their transition plans.
+First, run the development server:
 
-SIX is committed to help their listed companies transition to a more sustainable future. It is important to understand that stock exchanges do not control capital flows – investors decide where to deploy their capital. Nevertheless, stock exchanges can reduce capital-market inefficiencies that can hinder the optimal allocation of economic resources i.e., towards transitioning to a sustainable economy. With the beforementioned objective and scope in mind, SIX aims to bring awareness to their listed companies about various tools (best practices) available in the market to track and report their sustainability progress along the value chain. 
+```bash
+yarn
+yarn dev
+```
 
-Use Cases for such a solution include: 
-* Companies gather insights on best practices on sustainability methodologies, relevant datasets and reporting practices implemented by peers within or beyond their respective industries.
-* Investors can leverage specific sustainability tools implemented by companies to evaluate either their carbon footprint or the potential risks posed to their investments. 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Expected Outcome:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-A platform of aggregated and categorized tools for ESG data depending on needs. OR a program able to identify the right tools for each industry.
-We expect a mockup version with or without actual data behind.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## The Pitch:
+## Learn More
 
-Insert Pitchdeck here
+To learn more about Next.js, take a look at the following resources:
 
-## Deep Dive Slides:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Insert Deep Dive Slides here: [202406_SwissHacks - SIX Challenge.pdf](https://github.com/user-attachments/files/15840874/202406_SwissHacks.-.SIX.Challenge.pdf)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
-## Further Information:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Insert further information here
-
-## Resources:
-Please use publicly available data for the case.
-
-## Judging Criteria:
-* Creativity (30%) - Yes important on the conceptualization of the solution 
-* Visual design (30%) - Yes, important criteria the user experience 
-* Feasibility (20%) - Yes, visual design encompasses of actual data and is scalable
-* Reachability (20%) - B2B market solution
-
-## Point of Contact:
-
-Insert name of contact points during the event. 
-
-## Price - the winning team members will each receive:
-Presentation to Senior Management at SIX Exchanges 
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
