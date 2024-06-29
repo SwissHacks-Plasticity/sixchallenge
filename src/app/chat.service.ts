@@ -1,5 +1,11 @@
 import { AzureKeyCredential, OpenAIClient } from '@azure/openai';
-import { sustainabilityCategories, SustainabilityCategory } from '@/app/data/types';
+import {
+  RecyclingProject,
+  sustainabilityCategories,
+  SustainabilityCategory,
+} from '@/app/data/types';
+
+import recyclingProjects from './data/recycling_projects.json';
 
 const ai = new OpenAIClient(
   'https://swisshacks-aoai.openai.azure.com/',
@@ -55,4 +61,17 @@ export const fetchSustainabilityCategories = async (
   const questionPrompt = `evaluate the best categories based on the last csr report of the company ${company}`;
 
   return fetchCategories(questionPrompt, expectedResponseType);
+};
+
+export const sortProjectsByCategoryMatch = (
+  categories: SustainabilityCategory[],
+  projects: RecyclingProject[],
+): RecyclingProject[] => {
+  return projects.sort((project1, project2) => {
+    const calcSumOfMatches = (tags: string[]) =>
+      categories.reduce((ctr, category) => (tags.includes(category) ? ctr + 1 : ctr), 0);
+    const p1fit = calcSumOfMatches(project1.tags);
+    const p2fit = calcSumOfMatches(project2.tags);
+    return p2fit - p1fit;
+  });
 };

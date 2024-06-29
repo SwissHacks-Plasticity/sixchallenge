@@ -1,27 +1,38 @@
 import React from 'react';
+import companies = require('../data/companies.json')
 
 import CreatableSelect from 'react-select/creatable';
-export interface ColourOption {
-  readonly value: string;
+import { Company } from '@/app/data/types';
+import { OnChangeValue } from 'react-select';
+export interface CompanyOption {
+  readonly value: Company;
   readonly label: string;
-  readonly color: string;
   readonly isFixed?: boolean;
   readonly isDisabled?: boolean;
 }
 
-export default function Autocomplete() {
-  const colourOptions: readonly ColourOption[] = [
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' },
-  ];
+interface Props {
+  onChange: (company: Company)=> void
+}
+
+export default function Autocomplete({onChange}: Props) {
+  const companyOptions: readonly CompanyOption[] = companies.map(company => ({
+    value: company, label: company.name
+  }));
+
+  const doChange= (onChangeValue: OnChangeValue<any, any>) => {
+    console.log(onChangeValue)
+
+    if(onChangeValue?.value){
+      onChange(onChangeValue.value)
+    }
+  }
+
   return (
     <CreatableSelect
       isClearable
-      options={colourOptions}
+      options={companyOptions}
+      onChange={doChange}
       className="w-full"
       styles={{
         container: (base) => ({

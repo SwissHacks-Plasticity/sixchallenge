@@ -23,20 +23,20 @@ export const Step3: React.FC = () => {
     <>
       <div>
         <h1>
-          {state.company} <span className="text-black">at a glance</span>
+          {state.company?.name} <span className="text-black">at a glance</span>
         </h1>
         <section className="flex justify-between m-20 ">
           <div>
             <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.location} Locations</span>
+            <span className="text-blue font-bold">{state.company?.numCountries} Locations</span>
           </div>
           <div>
             <img src="/employees.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.employees} Employees</span>
+            <span className="text-blue font-bold">{state.company?.numEmployees} Employees</span>
           </div>
           <div>
             <img src="/cash.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{state.revenue} Revenue</span>
+            <span className="text-blue font-bold">{state.company?.totalRevenue} Revenue</span>
           </div>
         </section>
         {/* <div className='contents'> */}
@@ -90,7 +90,7 @@ export const Step3: React.FC = () => {
       </div>
       <section className="bg-blue p-8 text-white rounded-lg mb-8">
         <h2 className="text-white">
-          <span className="text-green">{state.company}</span> net Circular Plastic Future
+          <span className="text-green">{state.company?.name}</span> net Circular Plastic Future
         </h2>
         <h3 className="font-normal text-xl mb-6">Download your free personalized Factsheet</h3>
         <button className="button">Show Summary</button>
