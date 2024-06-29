@@ -30,7 +30,7 @@ export const Step3: React.FC<StepProps> = () => {
       const newState = updateProjectsCart(project);
       updateFormState({ recyclingProjectsCart: newState });
       localStorage.setItem('recyclingProjectsCart', JSON.stringify(newState));
-      localStorage.setItem('company', JSON.stringify(state.company));
+      localStorage.setItem('state', JSON.stringify(state));
     },
     [updateFormState],
   );
