@@ -5,8 +5,6 @@ import {
   SustainabilityCategory,
 } from '@/app/data/types';
 
-import recyclingProjects from './data/recycling_projects.json';
-
 const ai = new OpenAIClient(
   'https://swisshacks-aoai.openai.azure.com/',
   new AzureKeyCredential('d0b929b72ea2465fa8a744934d0bc101'),
