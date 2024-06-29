@@ -11,9 +11,6 @@ export const Step1: React.FC = () => {
       <h1>Lorem ipsum ist Text, der gerne als Platzhalter</h1>
       <label className="font-bold mb-2 block">Your Company</label>
       <Autocomplete></Autocomplete>
-      <button className="button blue" onClick={setCompany}>
-        Set company
-      </button>
     </div>
   );
 };
