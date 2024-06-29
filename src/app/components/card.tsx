@@ -11,7 +11,7 @@ export type Project = {
 export const Card = ({ project, onAdd }: { project: Project; onAdd?: () => void }): JSX.Element => {
   return (
     <section className="w-full relative py-8">
-      <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us">
+      <div className=" bg-white border-lightgreen border-2 rounded-lg right-0 bottom-0 ml-[250px] pl-16 py-6 pr-4 shadow-us overflow-scroll">
         <h3>{project.name}</h3>
         <div className="mb-3">{project.desc}</div>
         <div className="flex">

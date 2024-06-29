@@ -20,7 +20,7 @@ export const Step3: React.FC<StepProps> = () => {
     desc: 'Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt.',
   };
 
-  const formatNumber = useCallback((number = 0)=> {
+  const formatNumber = useCallback((number = 0) => {
     // Use the toLocaleString method to add suffixes to the number
     return number.toLocaleString('en-US', {
       // add suffixes for thousands, millions, and billions
@@ -28,9 +28,9 @@ export const Step3: React.FC<StepProps> = () => {
       maximumFractionDigits: 2,
       // specify the abbreviations to use for the suffixes
       notation: 'compact',
-      compactDisplay: 'short'
+      compactDisplay: 'short',
     });
-  }, [])
+  }, []);
 
   return (
     <>
@@ -41,21 +41,24 @@ export const Step3: React.FC<StepProps> = () => {
         <section className="flex justify-between m-20 ">
           <div>
             <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.numCountries)} Locations</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.numCountries)} Locations
+            </span>
           </div>
           <div>
             <img src="/employees.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.numEmployees)} Employees</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.numEmployees)} Employees
+            </span>
           </div>
           <div>
             <img src="/cash.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.totalRevenue)} Revenue</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.totalRevenue)} Revenue
+            </span>
           </div>
         </section>
-        {/* <div className='contents'> */}
-        <section className="w-full">
-          {' '}
-          {/* add class unstuck */}
+        <section className="w-[15vw] fixed right-[5vw] top-[30vh]">
           <div className="font-bold mb-2 block text-3xl">Your need</div>
           <div className="text-blue font-bold text-3xl mb-6">
             {state.credits} xxx Credit to be net Circular Plastic
@@ -69,25 +72,9 @@ export const Step3: React.FC<StepProps> = () => {
             disabled={true}
             onChange={(value) => {}}
           />
-          <Link href="/summary" className="button blue absolute right-[216px] top-[564px]">
-            Checkout
-          </Link>
+          <button className="button blue filled mt-6">Checkout</button>
         </section>
 
-        {/* <section className="w-full sticky top-0 left-0 right-0 bg-blue">
-          <div className="font-bold mb-2 block text-3xl">Your need</div>
-          <div className="text-blue font-bold text-3xl mb-6">
-            {state.credits} xxx Credit to be net Circular Plastic
-          </div>
-          <SliderInput
-            hideInputNumber={true}
-            value={String(percentage ?? 0)}
-            min="0"
-            max="100"
-            stepSize={25}
-            disabled={true} onChange={(value) => {}}/>
-        </section> */}
-        {/* </div> */}
         <section className="bg-white my-20 px-16 py-10 white-box">
           <p>22,3 Tons remaining to save Lorem ipsum ist Text der gerne.</p>
         </section>
