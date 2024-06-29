@@ -1,4 +1,4 @@
-[
+export const companies = [
   {
     "name": "Nestlé SA",
     "industry": "Food",
@@ -16,7 +16,7 @@
     "numEmployees": 103000,
     "totalRevenue": 66400000000,
     "totalPlastic": 3365,
-    "plasticRecycledRate": 60,
+    "plasticRecycledRate": 0.6,
     "plasticLeakageRate": 0.1
   },
   {
@@ -25,9 +25,9 @@
     "numCountries": 155,
     "numEmployees": 76000,
     "totalRevenue": 45400000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 2945,
+    "plasticRecycledRate": 0.5,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "Richemont SA",
@@ -55,9 +55,9 @@
     "numCountries": 50,
     "numEmployees": 115000,
     "totalRevenue": 4080000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 34,
+    "plasticRecycledRate": 0.5,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "ABB Ltd",
@@ -95,9 +95,9 @@
     "numCountries": 75,
     "numEmployees": 25000,
     "totalRevenue": 946000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 2945,
+    "plasticRecycledRate": 0.7,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "Givaudan SA",
@@ -115,9 +115,9 @@
     "numCountries": 70,
     "numEmployees": 67000,
     "totalRevenue": 2680000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 13400,
+    "plasticRecycledRate": 0.3,
+    "plasticLeakageRate": 0.2
   },
   {
     "name": "Swisscom AG",
@@ -135,9 +135,9 @@
     "numCountries": 30,
     "numEmployees": 14400,
     "totalRevenue": 49900000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 7,
+    "plasticRecycledRate": 0.3,
+    "plasticLeakageRate": 0.2
   },
   {
     "name": "Partners Group Holding AG",
@@ -145,9 +145,9 @@
     "numCountries": 20,
     "numEmployees": 14400,
     "totalRevenue": 1900000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 6,
+    "plasticRecycledRate": 0.5,
+    "plasticLeakageRate": 0.25
   },
   {
     "name": "Sonova",
@@ -165,9 +165,9 @@
     "numCountries": 40,
     "numEmployees": 11500,
     "totalRevenue": 986000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 17000,
+    "plasticRecycledRate": 0.45,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "Swiss Life Holding AG",
@@ -175,9 +175,9 @@
     "numCountries": 10,
     "numEmployees": 10000,
     "totalRevenue": 19800000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 10,
+    "plasticRecycledRate": 0.5,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "Logitech International SA",
@@ -185,9 +185,9 @@
     "numCountries": 100,
     "numEmployees": 7300,
     "totalRevenue": 4300000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
-    "plasticLeakageRate": 0
+    "totalPlastic": 45000,
+    "plasticRecycledRate": 0.5,
+    "plasticLeakageRate": 0.1
   },
   {
     "name": "Kuehne + Nagel",
@@ -195,8 +195,8 @@
     "numCountries": 100,
     "numEmployees": 79000,
     "totalRevenue": 18500000000,
-    "totalPlastic": 0,
-    "plasticRecycledRate": 0,
+    "totalPlastic": 23000,
+    "plasticRecycledRate": 0.35,
     "plasticLeakageRate": 0.1
   },
   {
