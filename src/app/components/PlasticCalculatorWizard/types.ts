@@ -1,7 +1,7 @@
 import { Company } from '@/app/data/types';
 
 export type PlasticCalculatorState = {
-  company?: string;
+  company?: Company;
   plasticTotal?: number;
   leakage?: number;
   recycling?: number;

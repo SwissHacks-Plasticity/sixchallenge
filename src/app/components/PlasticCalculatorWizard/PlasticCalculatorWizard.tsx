@@ -10,7 +10,7 @@ const WizardSteps = [Step1, Step2, Step3];
 
 export const PlasticCalculatorContext = createContext<PlasticCalculatorContextProps>({
   state: {
-    company: 'Givaudan',
+    company: undefined,
     plasticTotal: 0,
     leakage: 0,
     recycling: 0,
