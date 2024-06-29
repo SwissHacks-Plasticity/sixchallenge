@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 import SliderInput from '../../SliderInput/SliderInput';
+import { StepProps } from '../types';
 
 
-export const Step2: React.FC = () => {
+export const Step2: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const setTotal = useCallback((value: string) => updateFormState({ plasticTotal: Math.floor(Number(value)) }), [updateFormState]);
   const setLeakage = useCallback((value: string) => updateFormState({ leakage: Math.floor(Number(value)) }), [updateFormState]);

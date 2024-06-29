@@ -5,8 +5,9 @@ import SliderInput from '../../SliderInput/SliderInput';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 import Link from 'next/link';
 import { Card } from '../../card';
+import { StepProps } from '../types';
 
-export const Step3: React.FC = () => {
+export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const [percentage, setPercentage] = useState(0);
   const project = {

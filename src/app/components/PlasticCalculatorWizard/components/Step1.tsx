@@ -2,8 +2,9 @@ import { useCallback } from 'react';
 import { usePlasticCalculatorWizardState } from '../hooks/usePlasticCalculatorWizardState';
 import Autocomplete from '../../autocomplete';
 import { Company } from '@/app/data/types';
+import { StepProps } from '../types';
 
-export const Step1: React.FC = () => {
+export const Step1: React.FC<StepProps> = () => {
   const { updateFormState } = usePlasticCalculatorWizardState();
   const setCompany = useCallback((company: Company) => updateFormState({ company: company }), [updateFormState]);
 

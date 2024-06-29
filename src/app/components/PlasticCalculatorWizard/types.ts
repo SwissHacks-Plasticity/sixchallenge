@@ -15,3 +15,7 @@ export type PlasticCalculatorContextProps = {
   state: PlasticCalculatorState;
   updateFormState: (state: Partial<PlasticCalculatorState>) => void;
 };
+
+export type StepProps = {
+  handleContinue: () => void;
+}

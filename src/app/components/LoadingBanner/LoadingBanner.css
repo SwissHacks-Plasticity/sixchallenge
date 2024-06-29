@@ -1,0 +1,35 @@
+#turtle {
+  animation: turtle 4s ease-in-out infinite;
+}
+
+@keyframes turtle {
+  0% {
+    transform: translateX(265.094px) translateY(59.846px);
+  }
+
+  50% {
+    transform: translateX(265.094px) translateY(79.846px);
+  }
+
+  100% {
+    transform: translateX(265.094px) translateY(59.846px);
+  }
+}
+
+#lord {
+  animation: lord 3s ease-in-out infinite;
+}
+
+@keyframes lord {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

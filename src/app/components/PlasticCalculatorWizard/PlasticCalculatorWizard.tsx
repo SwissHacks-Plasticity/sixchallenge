@@ -4,9 +4,37 @@ import { PropsWithChildren, createContext, useCallback, useEffect, useMemo, useS
 import { Step1 } from './components/Step1';
 import { Step2 } from './components/Step2';
 import { Step3 } from './components/Step3';
-import { PlasticCalculatorContextProps, PlasticCalculatorState } from './types';
+import { PlasticCalculatorContextProps, PlasticCalculatorState, StepProps } from './types';
+import { LoadingStep } from './components/LoadingStep';
 
-const WizardSteps = [Step1, Step2, Step3];
+type StepConfig = {
+  component: React.FC<StepProps>;
+  canContinue?: boolean;
+  canGoBack?: boolean
+}
+
+const WizardSteps: StepConfig[] = [
+  {
+    component: Step1,
+    canContinue: true,
+    canGoBack: false
+  },
+  {
+    component: LoadingStep,
+    canContinue: false,
+    canGoBack: false
+  },
+  {
+    component: Step2,
+    canContinue: true,
+    canGoBack: false
+  },
+  {
+    component: Step3,
+    canContinue: true,
+    canGoBack: true
+  },
+];
 
 export const PlasticCalculatorContext = createContext<PlasticCalculatorContextProps>({
   state: {
@@ -43,7 +71,7 @@ export const PlasticCalculatorContextProvider: React.FC<PropsWithChildren> = ({ 
 };
 
 export const PlasticCalculatorWizardHandler: React.FC = () => {
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [currentStepIndex, setCurrentStepIndex] = useState(1);
 
   const onContinue = useCallback(
     () => setCurrentStepIndex(Math.min(WizardSteps.length - 1, currentStepIndex + 1)),
@@ -55,13 +83,13 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
     [currentStepIndex, setCurrentStepIndex],
   );
 
-  const CurrentStep = useMemo(() => WizardSteps[currentStepIndex], [currentStepIndex]);
+  const currentStep = useMemo(() => WizardSteps[currentStepIndex], [currentStepIndex]);
 
   function getBackgroundClass() {
     switch (currentStepIndex) {
       case 0:
         return 'background-bottle';
-      case 1:
+      case 2:
         return 'background-turtle';
       default:
         return 'background-no-image';
@@ -76,16 +104,17 @@ export const PlasticCalculatorWizardHandler: React.FC = () => {
         <button
           className="button blue back mb-10"
           onClick={onBack}
-          hidden={currentStepIndex === 0}
-          disabled={currentStepIndex === 0}
+          hidden={!currentStep.canGoBack}
+          disabled={!currentStep.canGoBack}
         >
           Back
         </button>
-        <CurrentStep />
+        <currentStep.component handleContinue={onContinue} />
         <button
           className="button blue right mt-4"
           onClick={onContinue}
-          hidden={currentStepIndex === WizardSteps.length - 1}
+          hidden={!currentStep.canContinue}
+          disabled={!currentStep.canContinue}
         >
           Next
         </button>
