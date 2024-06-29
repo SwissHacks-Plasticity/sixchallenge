@@ -10,6 +10,7 @@ import { StepProps } from '../types';
 export const Step3: React.FC<StepProps> = () => {
   const { state, updateFormState } = usePlasticCalculatorWizardState();
   const [percentage, setPercentage] = useState(0);
+  const [amountProjects, setAmountProjects] = useState(3);
   const project = {
     name: 'Project 1',
     location: 'Switzerland',
@@ -20,7 +21,7 @@ export const Step3: React.FC<StepProps> = () => {
     desc: 'Lorem ipsum ist Text, der gerne als Platzhalter genommen wird, wenn es noch keinen richtigen Text gibt. Der Grund dafür ist ein angenehmer Zeilenfall, der einen guten Eindruck von dem finalen Layout vermittelt.',
   };
 
-  const formatNumber = useCallback((number = 0)=> {
+  const formatNumber = useCallback((number = 0) => {
     // Use the toLocaleString method to add suffixes to the number
     return number.toLocaleString('en-US', {
       // add suffixes for thousands, millions, and billions
@@ -28,9 +29,9 @@ export const Step3: React.FC<StepProps> = () => {
       maximumFractionDigits: 2,
       // specify the abbreviations to use for the suffixes
       notation: 'compact',
-      compactDisplay: 'short'
+      compactDisplay: 'short',
     });
-  }, [])
+  }, []);
 
   return (
     <>
@@ -41,15 +42,21 @@ export const Step3: React.FC<StepProps> = () => {
         <section className="flex justify-between m-20 ">
           <div>
             <img src="/worldwide.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.numCountries)} Locations</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.numCountries)} Locations
+            </span>
           </div>
           <div>
             <img src="/employees.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.numEmployees)} Employees</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.numEmployees)} Employees
+            </span>
           </div>
           <div>
             <img src="/cash.svg" alt="" width={100} height={100} className="mb-2" />
-            <span className="text-blue font-bold">{formatNumber(state.company?.totalRevenue)} Revenue</span>
+            <span className="text-blue font-bold">
+              {formatNumber(state.company?.totalRevenue)} Revenue
+            </span>
           </div>
         </section>
         {/* <div className='contents'> */}
@@ -93,12 +100,16 @@ export const Step3: React.FC<StepProps> = () => {
         </section>
         <section>
           <h2>We recommend these Projects</h2>
-
-          <Card project={project} onAdd={() => setPercentage(percentage + 25)} />
+          {state.recyclingProjects &&
+            state.recyclingProjects
+              .slice(0, amountProjects)
+              .map((p) => <Card project={p} onAdd={() => setPercentage(percentage + 25)} />)}
         </section>
 
         <section className="flex justify-center my-12">
-          <button className="button blue">More Projects</button>
+          <button className="button blue" onClick={() => setAmountProjects(amountProjects + 3)}>
+            More Projects
+          </button>
         </section>
       </div>
       <section className="bg-blue p-8 text-white rounded-lg mb-8">
