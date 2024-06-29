@@ -1,3 +1,5 @@
+import { Company } from '@/app/data/types';
+
 export type PlasticCalculatorState = {
   company?: string;
   plasticTotal?: number;
@@ -11,5 +13,5 @@ export type PlasticCalculatorState = {
 
 export type PlasticCalculatorContextProps = {
   state: PlasticCalculatorState;
-  updateFormState: (state: PlasticCalculatorState) => void;
+  updateFormState: (state: { company: Company }) => void;
 };
