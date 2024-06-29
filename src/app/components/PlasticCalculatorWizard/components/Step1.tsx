@@ -17,7 +17,6 @@ export const Step1: React.FC<StepProps> = () => {
   return (
     <div>
       <h1>Find Your Company and Start Your Sustainability Journey</h1>
-      <p>Achieve your sustainability goals effortlessly with tailored recommendations and streamlined impact initiatives.</p>
       <label className='font-bold mb-2 block'>Your Company</label>
       <Autocomplete onChange={setCompany} />
     </div>
