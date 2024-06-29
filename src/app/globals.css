@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-gradient-green {
+  background: transparent radial-gradient(closest-side at 50% 50%, #fcffe5 0%, #dcf343 100%) 0% 0%
+    no-repeat padding-box;
+}
