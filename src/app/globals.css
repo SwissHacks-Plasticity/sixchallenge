@@ -63,9 +63,10 @@
     @apply border-blue text-blue;
     padding: 10px 23px;
 
-    &.right {
-      float: right;
-    }
+  }
+
+  &.right {
+    float: right;
   }
 
   &.filled {
