@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Autocomplete from './components/autocomplete';
+import { PlasticCalculatorWizard } from './components/PlasticCalculatorWizard/PlasticCalculatorWizard';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         priority
       />
       <Autocomplete></Autocomplete>
+      <PlasticCalculatorWizard />
     </main>
   );
 }
