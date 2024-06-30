@@ -25,7 +25,7 @@ export default function Summary() {
       <img src="/Summary-Logo.svg" alt="" />
       <main className="flex flex-col mx-20">
         <h1 className="text-white">
-          <span className="text-green">{state?.company?.name} </span>
+          <span className="text-lightgreen">{state?.company?.name} </span>
           Plastic Footprint
         </h1>
         <section className="flex justify-between mb-16">
@@ -60,7 +60,7 @@ export default function Summary() {
         </section>
         <section className="mb-16">
           <h1 className="text-white">
-            <span className="text-green">{state?.company?.name} </span>
+            <span className="text-lightgreen">{state?.company?.name} </span>
             net Circular Plastic Future
           </h1>
           <h2 className="text-white">
