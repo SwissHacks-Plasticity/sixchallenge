@@ -103,7 +103,7 @@ export const Step3: React.FC<StepProps> = () => {
           <p>{formatNumber(state.leakage)} Tons remaining to a prosperous and greener future.</p>
         </section>
         <section>
-          <h2>We recommend these Projects</h2>
+          <h2>We recommend these projects</h2>
           {state.recyclingProjects &&
             state.recyclingProjects.slice(0, amountProjects).map((p) => {
               return (
